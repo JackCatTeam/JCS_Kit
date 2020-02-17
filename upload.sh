@@ -11,7 +11,7 @@ set -e # 遇到错误时终止当前脚本执行
 #LineNumber=`grep -nE 's.version.*=' JCTheme.podspec | cut -d : -f1`
 #sed -i "" "${LineNumber}s/${VersionNumber}/${NewVersionNumber}/g" JCS_Kit.podspec
 
-gitsource=https://gitee.com/devjackcat/JCS_PodSpecs.git,https://cdn.cocoapods.org/
+gitsource=https://gitee.com/devjackcat/JCS_PodSpecs.git,https://github.com/CocoaPods/Specs.git
 
 # 采集Tag
 tag=""

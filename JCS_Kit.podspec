@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "JCS_Kit"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "JCS_Kit."
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                     this is JCS_Kit
                    DESC
 
-  s.homepage     = "https://github.com/JackCatTeam/JCS_Kit"
+  s.homepage     = "https://github.com/jcsteam/JCS_Kit"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/JackCatTeam/JCS_Kit.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/jcsteam/JCS_Kit.git", :tag => s.version.to_s }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -141,5 +141,6 @@ Pod::Spec.new do |s|
   s.dependency 'JCS_Category'
   s.dependency 'JCS_Create'
   s.dependency 'JCS_Router'
+  s.dependency 'JCS_Components'
 
 end
