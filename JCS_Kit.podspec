@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "JCS_Kit"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "JCS_Kit."
 
   # This description is used to generate tags and improve search results.
@@ -142,5 +142,6 @@ Pod::Spec.new do |s|
   s.dependency 'JCS_Create'
   s.dependency 'JCS_Router'
   s.dependency 'JCS_Components'
+  s.dependency 'JCS_EventBus'
 
 end

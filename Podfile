@@ -15,5 +15,6 @@ target 'JCS_Kit' do
   pod 'JCS_Create'
   pod 'JCS_Router'
   pod 'JCS_Components'
+  pod ‘JCS_EventBus’
  
 end

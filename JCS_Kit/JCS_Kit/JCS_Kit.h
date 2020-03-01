@@ -13,5 +13,6 @@
 #import <JCS_Category/JCS_Category.h>
 #import <JCS_Create/JCS_Create.h>
 #import <JCS_Router/JCS_Router.h>
+#import <JCS_EventBus/JCS_EventBus.h>
 
 #endif /* JCS_Kit_h */
