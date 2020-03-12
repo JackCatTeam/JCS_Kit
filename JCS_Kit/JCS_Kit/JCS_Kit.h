@@ -9,10 +9,11 @@
 #ifndef JCS_Kit_h
 #define JCS_Kit_h
 
-#import <JCS_BaseLib/JCS_BaseLib.h>
-#import <JCS_Category/JCS_Category.h>
-#import <JCS_Create/JCS_Create.h>
-#import <JCS_Router/JCS_Router.h>
-#import <JCS_EventBus/JCS_EventBus.h>
+#import "JCS_BaseLib.h"
+#import "JCS_Category.h"
+#import "JCS_Create.h"
+#import "JCS_Router.h"
+#import "JCS_EventBus.h"
+#import "JCS_Injection.h"
 
 #endif /* JCS_Kit_h */

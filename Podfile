@@ -5,16 +5,15 @@ platform :ios, '9.0'
 source 'https://gitee.com/devjackcat/JCS_PodSpecs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
-
 use_frameworks!
 
 target 'JCS_Kit' do
 
-  pod 'JCS_BaseLib'
-  pod 'JCS_Category'
-  pod 'JCS_Create'
-  pod 'JCS_Router'
-  pod 'JCS_Components'
-  pod ‘JCS_EventBus’
+  pod 'FastCoding'
+  pod 'Masonry'
+  pod 'SDWebImage'
+  pod "ReactiveObjC"
+  pod 'MJRefresh'
+  pod 'MJExtension'
  
 end
