@@ -12,7 +12,7 @@
 #import "JCS_TableViewRowProtocol.h"
 #import "JCS_TableViewSectionProtocol.h"
 
-#import "JCS_Create_Common.h"
+#import "JCS_Create_Defines.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

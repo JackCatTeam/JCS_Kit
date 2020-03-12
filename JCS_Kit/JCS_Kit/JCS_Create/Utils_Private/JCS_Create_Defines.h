@@ -1,13 +1,13 @@
 //
-//  JCS_Create_Common.h
+//  JCS_Create_Defines.h
 //  JCS_Create
 //
 //  Created by 永平 on 2020/2/15.
 //  Copyright © 2020 yongping. All rights reserved.
 //
 
-#ifndef JCS_Create_Common_h
-#define JCS_Create_Common_h
+#ifndef JCS_Create_Defines_h
+#define JCS_Create_Defines_h
 
 typedef enum : NSUInteger {
     JCS_SelectModeSingle = 0,
@@ -25,4 +25,4 @@ typedef enum : NSUInteger {
 #define kUICollectionViewDefaulColumnCount 1
 #define kUICollectionViewDefaulDecorationZIndex -1
 
-#endif /* JCS_Create_Common_h */
+#endif /* JCS_Create_Defines_h */

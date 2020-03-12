@@ -13,7 +13,7 @@
 
 #import "JCS_CollectionViewCustomerLayoutSectionMaxFrameItem.h"
 #import "UICollectionViewLayoutAttributes+JCS_DecorationView.h"
-#import "JCS_Create_Common.h"
+#import "JCS_Create_Defines.h"
 
 @interface JCS_CollectionViewWaterFallLayout()
 

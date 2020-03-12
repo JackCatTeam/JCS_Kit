@@ -14,7 +14,7 @@
 #import "JCS_Category.h"
 #import "JCS_ConfigCollectionViewDatasource.h"
 #import "JCS_CollectionViewFlowLayout.h"
-#import "JCS_Create_Common.h"
+#import "JCS_Create_Defines.h"
 
 static char configDatasourceKey;
 static char configRefreshHeaderBlockKey;

@@ -10,7 +10,6 @@
 #define JCS_BaseLib_h
 
 #import "JCS_Macros.h"
-#import "JCS_BaseViewProtocol.h"
 
 
 #endif /* JCS_BaseLib_h */

@@ -22,7 +22,7 @@
 #import "JCS_RouterTool.h"
 #import "JCS_CollectionViewModel.h"
 #import "JCS_CollectionViewFlowLayout.h"
-#import "JCS_Create_Common.h"
+#import "JCS_Create_Defines.h"
 #import "JCS_CollectionViewModelHelper.h"
 
 @interface JCS_ConfigCollectionViewDatasource()<JCS_CollectionViewFlowLayoutDelegate>

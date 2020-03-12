@@ -12,7 +12,7 @@
 #import "JCS_TableViewModel.h"
 #import <objc/runtime.h>
 
-#import "JCS_Create_Common.h"
+#import "JCS_Create_Defines.h"
 
 #import "JCS_ConfigTableViewDatasource.h"
 

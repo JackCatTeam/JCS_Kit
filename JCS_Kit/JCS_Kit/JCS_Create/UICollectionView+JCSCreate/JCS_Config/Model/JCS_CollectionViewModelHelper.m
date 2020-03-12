@@ -13,7 +13,7 @@
 #import "JCS_BaseLib.h"
 #import "JCS_CollectionViewItemProtocol.h"
 #import "JCS_CollectionViewSectionProtocol.h"
-#import "JCS_Create_Common.h"
+#import "JCS_Create_Defines.h"
 #import "UICollectionViewCell+JCSCreate.h"
 #import "UICollectionReusableView+JCSCreate.h"
 

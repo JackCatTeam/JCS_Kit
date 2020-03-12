@@ -10,7 +10,7 @@
 #import "JCS_CollectionViewProtocol.h"
 #import "JCS_CollectionViewItemProtocol.h"
 #import "JCS_CollectionViewSectionProtocol.h"
-#import "JCS_Create_Common.h"
+#import "JCS_Create_Defines.h"
 #import "JCS_EventBus.h"
 
 NS_ASSUME_NONNULL_BEGIN
