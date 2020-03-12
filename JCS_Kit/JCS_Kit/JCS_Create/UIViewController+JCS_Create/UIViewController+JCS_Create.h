@@ -39,7 +39,7 @@
 #pragma mark - 转场
 
 /// 转场切换，默认切换时间0.3s
-- (void)transition:(UIViewController*)toChild completion:(void(^)(void))completion;
+- (void)jcs_transition:(UIViewController*)transToVC completion:(void(^)(void))completion;
 - (void)jcs_transition:(UIViewController*)transToVC duration:(CGFloat)duration completion:(void(^)(void))completion;
 
 @end

@@ -86,6 +86,16 @@
 		7DA268502419D32500C1653C /* UITextView+JCS_Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA267FE2419D32400C1653C /* UITextView+JCS_Create.m */; };
 		7DA268512419D32500C1653C /* UIControl+JCSCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268012419D32400C1653C /* UIControl+JCSCreate.m */; };
 		7DA268522419D32500C1653C /* UIImageView+JCSCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268032419D32400C1653C /* UIImageView+JCSCreate.m */; };
+		7DA2687E241A4B2B00C1653C /* ExampleListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2687D241A4B2B00C1653C /* ExampleListVC.m */; };
+		7DA26885241A4D1100C1653C /* Category_ExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA26884241A4D1100C1653C /* Category_ExampleVC.m */; };
+		7DA2688C241A4D3200C1653C /* EventBus_ExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2688B241A4D3200C1653C /* EventBus_ExampleVC.m */; };
+		7DA26890241A4D4000C1653C /* Injection_ExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2688F241A4D4000C1653C /* Injection_ExampleVC.m */; };
+		7DA26898241A4DA100C1653C /* Router_ExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA26897241A4DA100C1653C /* Router_ExampleVC.m */; };
+		7DA2689B241A4DEC00C1653C /* ExampleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2689A241A4DEC00C1653C /* ExampleListCell.m */; };
+		7DA2689E241A4E1D00C1653C /* ExampleListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2689D241A4E1D00C1653C /* ExampleListItem.m */; };
+		7DA268A1241A4E9900C1653C /* BaseLib_ExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268A0241A4E9900C1653C /* BaseLib_ExampleVC.m */; };
+		7DA268A5241A511200C1653C /* ExampleListVC.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 7DA26880241A4B6100C1653C /* ExampleListVC.geojson */; };
+		7DA268A8241A563500C1653C /* ExampleSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268A7241A563500C1653C /* ExampleSectionHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -261,6 +271,25 @@
 		7DA268042419D32400C1653C /* UIImageView+JCSCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JCSCreate.h"; sourceTree = "<group>"; };
 		7DA268082419D32400C1653C /* JCS_BaseLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCS_BaseLib.h; sourceTree = "<group>"; };
 		7DA2680A2419D32400C1653C /* JCS_Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCS_Macros.h; sourceTree = "<group>"; };
+		7DA2687C241A4B2B00C1653C /* ExampleListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleListVC.h; sourceTree = "<group>"; };
+		7DA2687D241A4B2B00C1653C /* ExampleListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleListVC.m; sourceTree = "<group>"; };
+		7DA26880241A4B6100C1653C /* ExampleListVC.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExampleListVC.geojson; sourceTree = "<group>"; };
+		7DA26883241A4D1100C1653C /* Category_ExampleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category_ExampleVC.h; sourceTree = "<group>"; };
+		7DA26884241A4D1100C1653C /* Category_ExampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category_ExampleVC.m; sourceTree = "<group>"; };
+		7DA2688A241A4D3200C1653C /* EventBus_ExampleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventBus_ExampleVC.h; sourceTree = "<group>"; };
+		7DA2688B241A4D3200C1653C /* EventBus_ExampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventBus_ExampleVC.m; sourceTree = "<group>"; };
+		7DA2688E241A4D4000C1653C /* Injection_ExampleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Injection_ExampleVC.h; sourceTree = "<group>"; };
+		7DA2688F241A4D4000C1653C /* Injection_ExampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Injection_ExampleVC.m; sourceTree = "<group>"; };
+		7DA26896241A4DA100C1653C /* Router_ExampleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Router_ExampleVC.h; sourceTree = "<group>"; };
+		7DA26897241A4DA100C1653C /* Router_ExampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Router_ExampleVC.m; sourceTree = "<group>"; };
+		7DA26899241A4DEC00C1653C /* ExampleListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleListCell.h; sourceTree = "<group>"; };
+		7DA2689A241A4DEC00C1653C /* ExampleListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleListCell.m; sourceTree = "<group>"; };
+		7DA2689C241A4E1D00C1653C /* ExampleListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleListItem.h; sourceTree = "<group>"; };
+		7DA2689D241A4E1D00C1653C /* ExampleListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleListItem.m; sourceTree = "<group>"; };
+		7DA2689F241A4E9900C1653C /* BaseLib_ExampleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseLib_ExampleVC.h; sourceTree = "<group>"; };
+		7DA268A0241A4E9900C1653C /* BaseLib_ExampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseLib_ExampleVC.m; sourceTree = "<group>"; };
+		7DA268A6241A563500C1653C /* ExampleSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleSectionHeaderView.h; sourceTree = "<group>"; };
+		7DA268A7241A563500C1653C /* ExampleSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleSectionHeaderView.m; sourceTree = "<group>"; };
 		DCF346EA65B37144E17495F1 /* Pods-JCS_Kit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCS_Kit.debug.xcconfig"; path = "Target Support Files/Pods-JCS_Kit/Pods-JCS_Kit.debug.xcconfig"; sourceTree = "<group>"; };
 		E89503DEDD02D9B3D61F0037 /* Pods_JCS_Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCS_Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -306,18 +335,9 @@
 		7D056E4423EC0FD700E55653 /* JCS_Kit */ = {
 			isa = PBXGroup;
 			children = (
+				7DA2687A241A4AFE00C1653C /* Other */,
+				7DA2687B241A4B1300C1653C /* Example */,
 				7D056E5E23EC101700E55653 /* JCS_Kit */,
-				7D056E4523EC0FD700E55653 /* AppDelegate.h */,
-				7D056E4623EC0FD700E55653 /* AppDelegate.m */,
-				7D056E4823EC0FD700E55653 /* SceneDelegate.h */,
-				7D056E4923EC0FD700E55653 /* SceneDelegate.m */,
-				7D056E4B23EC0FD700E55653 /* ViewController.h */,
-				7D056E4C23EC0FD700E55653 /* ViewController.m */,
-				7D056E4E23EC0FD700E55653 /* Main.storyboard */,
-				7D056E5123EC0FDA00E55653 /* Assets.xcassets */,
-				7D056E5323EC0FDA00E55653 /* LaunchScreen.storyboard */,
-				7D056E5623EC0FDA00E55653 /* Info.plist */,
-				7D056E5723EC0FDA00E55653 /* main.m */,
 			);
 			path = JCS_Kit;
 			sourceTree = "<group>";
@@ -952,6 +972,122 @@
 			path = JCS_BaseLib;
 			sourceTree = "<group>";
 		};
+		7DA2687A241A4AFE00C1653C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				7D056E4523EC0FD700E55653 /* AppDelegate.h */,
+				7D056E4623EC0FD700E55653 /* AppDelegate.m */,
+				7D056E4823EC0FD700E55653 /* SceneDelegate.h */,
+				7D056E4923EC0FD700E55653 /* SceneDelegate.m */,
+				7D056E4B23EC0FD700E55653 /* ViewController.h */,
+				7D056E4C23EC0FD700E55653 /* ViewController.m */,
+				7D056E4E23EC0FD700E55653 /* Main.storyboard */,
+				7D056E5123EC0FDA00E55653 /* Assets.xcassets */,
+				7D056E5323EC0FDA00E55653 /* LaunchScreen.storyboard */,
+				7D056E5623EC0FDA00E55653 /* Info.plist */,
+				7D056E5723EC0FDA00E55653 /* main.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		7DA2687B241A4B1300C1653C /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				7DA26895241A4D9800C1653C /* Router_ExampleVC */,
+				7DA26881241A4CCF00C1653C /* BaseLib_ExampleVC */,
+				7DA2688D241A4D3900C1653C /* Injection_ExampleVC */,
+				7DA26889241A4D2900C1653C /* EventBus_ExampleVC */,
+				7DA26882241A4D0700C1653C /* Category_ExampleVC */,
+				7DA2687F241A4B4200C1653C /* ExampleList */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		7DA2687F241A4B4200C1653C /* ExampleList */ = {
+			isa = PBXGroup;
+			children = (
+				7DA268A4241A4EC600C1653C /* View */,
+				7DA268A3241A4EC100C1653C /* Model */,
+				7DA268A2241A4EBA00C1653C /* Controller */,
+				7DA26880241A4B6100C1653C /* ExampleListVC.geojson */,
+			);
+			path = ExampleList;
+			sourceTree = "<group>";
+		};
+		7DA26881241A4CCF00C1653C /* BaseLib_ExampleVC */ = {
+			isa = PBXGroup;
+			children = (
+				7DA2689F241A4E9900C1653C /* BaseLib_ExampleVC.h */,
+				7DA268A0241A4E9900C1653C /* BaseLib_ExampleVC.m */,
+			);
+			path = BaseLib_ExampleVC;
+			sourceTree = "<group>";
+		};
+		7DA26882241A4D0700C1653C /* Category_ExampleVC */ = {
+			isa = PBXGroup;
+			children = (
+				7DA26883241A4D1100C1653C /* Category_ExampleVC.h */,
+				7DA26884241A4D1100C1653C /* Category_ExampleVC.m */,
+			);
+			path = Category_ExampleVC;
+			sourceTree = "<group>";
+		};
+		7DA26889241A4D2900C1653C /* EventBus_ExampleVC */ = {
+			isa = PBXGroup;
+			children = (
+				7DA2688A241A4D3200C1653C /* EventBus_ExampleVC.h */,
+				7DA2688B241A4D3200C1653C /* EventBus_ExampleVC.m */,
+			);
+			path = EventBus_ExampleVC;
+			sourceTree = "<group>";
+		};
+		7DA2688D241A4D3900C1653C /* Injection_ExampleVC */ = {
+			isa = PBXGroup;
+			children = (
+				7DA2688E241A4D4000C1653C /* Injection_ExampleVC.h */,
+				7DA2688F241A4D4000C1653C /* Injection_ExampleVC.m */,
+			);
+			path = Injection_ExampleVC;
+			sourceTree = "<group>";
+		};
+		7DA26895241A4D9800C1653C /* Router_ExampleVC */ = {
+			isa = PBXGroup;
+			children = (
+				7DA26896241A4DA100C1653C /* Router_ExampleVC.h */,
+				7DA26897241A4DA100C1653C /* Router_ExampleVC.m */,
+			);
+			path = Router_ExampleVC;
+			sourceTree = "<group>";
+		};
+		7DA268A2241A4EBA00C1653C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7DA2687C241A4B2B00C1653C /* ExampleListVC.h */,
+				7DA2687D241A4B2B00C1653C /* ExampleListVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7DA268A3241A4EC100C1653C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DA2689C241A4E1D00C1653C /* ExampleListItem.h */,
+				7DA2689D241A4E1D00C1653C /* ExampleListItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7DA268A4241A4EC600C1653C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7DA26899241A4DEC00C1653C /* ExampleListCell.h */,
+				7DA2689A241A4DEC00C1653C /* ExampleListCell.m */,
+				7DA268A6241A563500C1653C /* ExampleSectionHeaderView.h */,
+				7DA268A7241A563500C1653C /* ExampleSectionHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C1E0B2858A905F7CC92389A9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1020,6 +1156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA268A5241A511200C1653C /* ExampleListVC.geojson in Resources */,
 				7D056E5523EC0FDA00E55653 /* LaunchScreen.storyboard in Resources */,
 				7D056E5223EC0FDA00E55653 /* Assets.xcassets in Resources */,
 				7D056E5023EC0FD700E55653 /* Main.storyboard in Resources */,
@@ -1076,6 +1213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA268322419D32500C1653C /* JCS_TableViewModelHelper.m in Sources */,
+				7DA268A1241A4E9900C1653C /* BaseLib_ExampleVC.m in Sources */,
 				7DA2680F2419D32500C1653C /* NSString+JCS_Extension.m in Sources */,
 				7DA268232419D32500C1653C /* UIViewController+JCS_Injection.m in Sources */,
 				7DA268112419D32500C1653C /* UIViewController+JCS_Extension.m in Sources */,
@@ -1086,10 +1224,12 @@
 				7DA268372419D32500C1653C /* UITableView+JCSCreate.m in Sources */,
 				7DA268312419D32500C1653C /* JCS_TableViewModel.m in Sources */,
 				7DA2681F2419D32500C1653C /* JCS_EventBus.m in Sources */,
+				7DA2689E241A4E1D00C1653C /* ExampleListItem.m in Sources */,
 				7DA2682D2419D32500C1653C /* UIButton+JCSCreate.m in Sources */,
 				7DA268222419D32500C1653C /* NSString+JCS_Injection.m in Sources */,
 				7DA2680E2419D32500C1653C /* NSArray+JCS_Log.m in Sources */,
 				7DA2682C2419D32500C1653C /* UIViewController+JCS_Create.m in Sources */,
+				7DA26885241A4D1100C1653C /* Category_ExampleVC.m in Sources */,
 				7DA2680C2419D32500C1653C /* UIColor+JCS_Extension.m in Sources */,
 				7DA268412419D32500C1653C /* UICollectionView+JCS_Config.m in Sources */,
 				7DA268482419D32500C1653C /* JCS_CollectionViewEmptyCell.m in Sources */,
@@ -1097,6 +1237,7 @@
 				7DA268302419D32500C1653C /* UITableView+JCS_Config.m in Sources */,
 				7DA268452419D32500C1653C /* JCS_CollectionViewModel.m in Sources */,
 				7DA268472419D32500C1653C /* JCS_CollectionViewCustomerLayoutSectionMaxFrameItem.m in Sources */,
+				7DA26890241A4D4000C1653C /* Injection_ExampleVC.m in Sources */,
 				7DA2682E2419D32500C1653C /* UIScrollView+JCSCreate.m in Sources */,
 				7DA2683A2419D32500C1653C /* UITextField+JCSCreate.m in Sources */,
 				7DA268382419D32500C1653C /* NSDateFormatter+JCSCreate.m in Sources */,
@@ -1106,6 +1247,7 @@
 				7DA2680B2419D32500C1653C /* NSDate+JCS_Extension.m in Sources */,
 				7DA268502419D32500C1653C /* UITextView+JCS_Create.m in Sources */,
 				7DA268242419D32500C1653C /* NSObject+JCS_Injection.m in Sources */,
+				7DA2687E241A4B2B00C1653C /* ExampleListVC.m in Sources */,
 				7DA268202419D32500C1653C /* JCS_EventBusQueue.m in Sources */,
 				7DA268122419D32500C1653C /* UICollectionReusableView+JCS_Swizzle.m in Sources */,
 				7DA268152419D32500C1653C /* UINavigationController+JCS_Push.m in Sources */,
@@ -1117,8 +1259,10 @@
 				7DA268442419D32500C1653C /* UICollectionViewLayoutAttributes+JCS_DecorationView.m in Sources */,
 				7DA268332419D32500C1653C /* JCS_TableEmptyCell.m in Sources */,
 				7DA2683D2419D32500C1653C /* NSString+JCS_Create.m in Sources */,
+				7DA26898241A4DA100C1653C /* Router_ExampleVC.m in Sources */,
 				7DA268192419D32500C1653C /* UICollectionViewCell+JCS_Swizzle.m in Sources */,
 				7DA268492419D32500C1653C /* JCS_CollectionViewSectionEmptyView.m in Sources */,
+				7DA268A8241A563500C1653C /* ExampleSectionHeaderView.m in Sources */,
 				7DA2682F2419D32500C1653C /* JCS_ConfigTableViewDatasource.m in Sources */,
 				7DA2681C2419D32500C1653C /* NSDictionary+JCS_Log.m in Sources */,
 				7DA268402419D32500C1653C /* JCS_ConfigCollectionViewDatasource.m in Sources */,
@@ -1134,6 +1278,7 @@
 				7DA2681E2419D32500C1653C /* JCS_EventBusAction.m in Sources */,
 				7D056E4A23EC0FD700E55653 /* SceneDelegate.m in Sources */,
 				7DA268462419D32500C1653C /* JCS_CollectionViewModelHelper.m in Sources */,
+				7DA2688C241A4D3200C1653C /* EventBus_ExampleVC.m in Sources */,
 				7DA268512419D32500C1653C /* UIControl+JCSCreate.m in Sources */,
 				7DA268102419D32500C1653C /* NSString+JCS_MathParser.m in Sources */,
 				7DA2683F2419D32500C1653C /* JCS_RouterTool.m in Sources */,
@@ -1142,6 +1287,7 @@
 				7DA268392419D32500C1653C /* UISegmentedControl+JCSCreate.m in Sources */,
 				7DA268182419D32500C1653C /* UIViewController+JCS_Swizzle.m in Sources */,
 				7DA2684D2419D32500C1653C /* UICollectionViewLayout+JCSCreate.m in Sources */,
+				7DA2689B241A4DEC00C1653C /* ExampleListCell.m in Sources */,
 				7DA2683C2419D32500C1653C /* NSDictionary+JCS_Create.m in Sources */,
 				7DA268172419D32500C1653C /* UITableViewCell+JCS_Swizzle.m in Sources */,
 				7DA268252419D32500C1653C /* NSArray+JCS_Injection.m in Sources */,

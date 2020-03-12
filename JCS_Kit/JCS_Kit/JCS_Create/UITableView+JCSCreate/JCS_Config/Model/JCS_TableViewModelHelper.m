@@ -96,14 +96,22 @@
 
 + (NSString*)getSectionHeaderTitle:(id<JCS_TableViewSectionProtocol>)model{
     //配置headerClass,则返回nil
+    NSString *className = nil;
     if([model respondsToSelector:@selector(jcs_getHeaderViewClassName)]){
+        className = [model jcs_getHeaderViewClassName];
+    }
+    if(className.jcs_isValid){ //配置了class,则不采用title
         return nil;
     }
     return model.jcs_getHeaderTitle;
 }
 + (NSString*)getSectionFooterTitle:(id<JCS_TableViewSectionProtocol>)model {
     //配置footerClass,则返回nil
+    NSString *className = nil;
     if([model respondsToSelector:@selector(jcs_getFooterViewClassName)]){
+        className = [model jcs_getFooterViewClassName];
+    }
+    if(className.jcs_isValid){ //配置了class,则不采用title
         return nil;
     }
     return model.jcs_getFooterTitle;

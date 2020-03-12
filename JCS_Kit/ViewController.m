@@ -15,10 +15,7 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (IBAction)showExampleListVC:(id)sender {
+    [JCS_RouterCenter router2Url:@"jcs://ExampleListVC" args:nil completion:nil];
 }
-
-
 @end
