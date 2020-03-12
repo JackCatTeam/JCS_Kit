@@ -350,7 +350,7 @@ const char jcsInjectConfigKey;
     for (NSDictionary *keyValues in keyValuesArray) {
         if ([keyValues isKindOfClass:[NSArray class]]){
             [modelArray addObject:[self mj_objectArrayWithKeyValuesArray:keyValues context:context]];
-        } else {
+        } else if ([keyValues isKindOfClass:[NSDictionary class]]){
             Class __class = [keyValues jcs_getModelClass];
             id model = nil;
             if(__class){
