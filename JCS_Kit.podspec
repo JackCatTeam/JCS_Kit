@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JCS_Kit"
-  s.version      = "1.0.8"
+  s.version      = "1.0.9"
   s.summary      = "JCS_Kit."
   s.description  = <<-DESC
                     this is JCS_Kit
@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
       ss.dependency 'JCS_Kit/BaseLib'
     end
     
-    s.subspec 'JCS_Create' do |ss|
+    s.subspec 'Create' do |ss|
       ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Create/**/*.{h,m,swift}'
       ss.dependency "JCS_Kit/BaseLib"
       ss.dependency "JCS_Kit/Category"
