@@ -1,0 +1,57 @@
+{
+    "page":[{
+        "columnCount":3,
+        "showIf":"show if data is valid",
+        "hidden":true,
+        "header":{
+            "class":"DemoCollectionSectionHeaderView",
+            "size":{
+                "width":"$SCREEN_WIDTH",
+                "height":"50"
+            },
+            "data":{
+                "__class":"GoodsModel",
+                "title":"&headerData1"
+            }
+        },
+        "footer":{
+            "class":"DemoCollectionSectionFooterView",
+            "size":"$SCREEN_WIDTH,60",
+            "data":{
+                "title":"This is footer data"
+            }
+        },
+        "decoration":{
+            "class":"DemoCollectionDecorationVIew",
+            "marginInset":"10,10,10,10",
+            "zIndex":-1,
+            "data":"&headerData1"
+        },
+        "style":{
+            "minimumLineSpacing":5,
+            "minimumInteritemSpacing":5,
+            "sectionInset":"10,10,10,10"
+        },
+        "items":"&sectionItems1"
+    },{
+        "columnCount":4,
+        "header":{
+            "class":"DemoCollectionSectionHeaderView",
+            "size":"$SCREEN_WIDTH,60",
+            "data":{
+                "title":"This is header data"
+            }
+        },
+        "footer":{
+            "class":"DemoCollectionSectionFooterView",
+            "size":"$SCREEN_WIDTH,60",
+            "data":{
+                "title":"This is footer data"
+            }
+        },
+        "style":{
+            "sectionInset":[20,"30",10,10]
+        },
+        "items":"&sectionItems2"
+    }]
+}

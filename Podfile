@@ -15,5 +15,6 @@ target 'JCS_Kit' do
   pod "ReactiveObjC"
   pod 'MJRefresh'
   pod 'MJExtension'
+  pod 'DZNEmptyDataSet'
  
 end

@@ -114,6 +114,12 @@
 		7DA268F4241B3ADB00C1653C /* DemoCollectionSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268E4241B3ADB00C1653C /* DemoCollectionSectionHeaderView.m */; };
 		7DA268F5241B3ADB00C1653C /* DemoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268E7241B3ADB00C1653C /* DemoCollectionViewCell.m */; };
 		7DA268F6241B3ADB00C1653C /* DemoCollectionSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268EA241B3ADB00C1653C /* DemoCollectionSectionFooterView.m */; };
+		7DA26900241B5E4B00C1653C /* ExampleVC_InjectCollectionView2.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 7DA268F8241B5E4B00C1653C /* ExampleVC_InjectCollectionView2.geojson */; };
+		7DA26901241B5E4C00C1653C /* ExampleVC_InjectCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268F9241B5E4B00C1653C /* ExampleVC_InjectCollectionView.m */; };
+		7DA26902241B5E4C00C1653C /* ExampleVC_InjectCollectionView.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 7DA268FA241B5E4B00C1653C /* ExampleVC_InjectCollectionView.geojson */; };
+		7DA26903241B5E4C00C1653C /* Example_InjectTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268FD241B5E4B00C1653C /* Example_InjectTableView.m */; };
+		7DA26904241B5E4C00C1653C /* Example_InjectTableView.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 7DA268FF241B5E4B00C1653C /* Example_InjectTableView.geojson */; };
+		7DA26908241B5F3400C1653C /* ExampleVC_EmptyDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA26907241B5F3400C1653C /* ExampleVC_EmptyDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -344,6 +350,15 @@
 		7DA268E8241B3ADB00C1653C /* DemoCollectionDecorationVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCollectionDecorationVIew.h; sourceTree = "<group>"; };
 		7DA268EA241B3ADB00C1653C /* DemoCollectionSectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCollectionSectionFooterView.m; sourceTree = "<group>"; };
 		7DA268EB241B3ADB00C1653C /* DemoCollectionSectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCollectionSectionFooterView.h; sourceTree = "<group>"; };
+		7DA268F8241B5E4B00C1653C /* ExampleVC_InjectCollectionView2.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ExampleVC_InjectCollectionView2.geojson; sourceTree = "<group>"; };
+		7DA268F9241B5E4B00C1653C /* ExampleVC_InjectCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleVC_InjectCollectionView.m; sourceTree = "<group>"; };
+		7DA268FA241B5E4B00C1653C /* ExampleVC_InjectCollectionView.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ExampleVC_InjectCollectionView.geojson; sourceTree = "<group>"; };
+		7DA268FB241B5E4B00C1653C /* ExampleVC_InjectCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleVC_InjectCollectionView.h; sourceTree = "<group>"; };
+		7DA268FD241B5E4B00C1653C /* Example_InjectTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example_InjectTableView.m; sourceTree = "<group>"; };
+		7DA268FE241B5E4B00C1653C /* Example_InjectTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example_InjectTableView.h; sourceTree = "<group>"; };
+		7DA268FF241B5E4B00C1653C /* Example_InjectTableView.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Example_InjectTableView.geojson; sourceTree = "<group>"; };
+		7DA26906241B5F3400C1653C /* ExampleVC_EmptyDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleVC_EmptyDemo.h; sourceTree = "<group>"; };
+		7DA26907241B5F3400C1653C /* ExampleVC_EmptyDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleVC_EmptyDemo.m; sourceTree = "<group>"; };
 		DCF346EA65B37144E17495F1 /* Pods-JCS_Kit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCS_Kit.debug.xcconfig"; path = "Target Support Files/Pods-JCS_Kit/Pods-JCS_Kit.debug.xcconfig"; sourceTree = "<group>"; };
 		E89503DEDD02D9B3D61F0037 /* Pods_JCS_Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCS_Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1134,8 +1149,11 @@
 		7DA268A9241A5AE900C1653C /* Create_Example */ = {
 			isa = PBXGroup;
 			children = (
+				7DA26905241B5F0300C1653C /* JCS_ScrollEmptyDemo */,
 				7DA268CC241B3A8000C1653C /* JCS_ConfigTableView */,
 				7DA268CD241B3ABF00C1653C /* JCS_ConfigCollectionView */,
+				7DA268F7241B5E4B00C1653C /* JCS_InjectCollectionView */,
+				7DA268FC241B5E4B00C1653C /* JCS_InjectTableView */,
 			);
 			path = Create_Example;
 			sourceTree = "<group>";
@@ -1237,8 +1255,8 @@
 			isa = PBXGroup;
 			children = (
 				7DA268CF241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionView_V.h */,
-				7DA268D0241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionView_H.m */,
 				7DA268D1241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionView_V.m */,
+				7DA268D0241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionView_H.m */,
 				7DA268D2241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionView_H.h */,
 			);
 			path = FlowLayout;
@@ -1248,9 +1266,9 @@
 			isa = PBXGroup;
 			children = (
 				7DA268D4241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionView2_H.h */,
-				7DA268D5241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionView2_V.m */,
 				7DA268D6241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionView2_H.m */,
 				7DA268D7241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionView2_V.h */,
+				7DA268D5241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionView2_V.m */,
 			);
 			path = CustomerLayout;
 			sourceTree = "<group>";
@@ -1258,8 +1276,8 @@
 		7DA268D8241B3ADA00C1653C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7DA268D9241B3ADA00C1653C /* GoodsModel.m */,
 				7DA268DA241B3ADA00C1653C /* GoodsModel.h */,
+				7DA268D9241B3ADA00C1653C /* GoodsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1267,9 +1285,9 @@
 		7DA268DB241B3ADA00C1653C /* Compare */ = {
 			isa = PBXGroup;
 			children = (
+				7DA268DE241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionCompare_H.h */,
 				7DA268DC241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionCompare_H.m */,
 				7DA268DD241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionCompare_V.h */,
-				7DA268DE241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionCompare_H.h */,
 				7DA268DF241B3ADA00C1653C /* ExampleVC_JCS_ConfigCollectionCompare_V.m */,
 			);
 			path = Compare;
@@ -1278,10 +1296,10 @@
 		7DA268E0241B3ADB00C1653C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7DA268E1241B3ADB00C1653C /* DemoCollectionDecorationVIew.m */,
-				7DA268E2241B3ADB00C1653C /* SectionHeader */,
-				7DA268E5241B3ADB00C1653C /* Cell */,
 				7DA268E8241B3ADB00C1653C /* DemoCollectionDecorationVIew.h */,
+				7DA268E1241B3ADB00C1653C /* DemoCollectionDecorationVIew.m */,
+				7DA268E5241B3ADB00C1653C /* Cell */,
+				7DA268E2241B3ADB00C1653C /* SectionHeader */,
 				7DA268E9241B3ADB00C1653C /* SectionFooter */,
 			);
 			path = View;
@@ -1312,6 +1330,36 @@
 				7DA268EB241B3ADB00C1653C /* DemoCollectionSectionFooterView.h */,
 			);
 			path = SectionFooter;
+			sourceTree = "<group>";
+		};
+		7DA268F7241B5E4B00C1653C /* JCS_InjectCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7DA268FB241B5E4B00C1653C /* ExampleVC_InjectCollectionView.h */,
+				7DA268F9241B5E4B00C1653C /* ExampleVC_InjectCollectionView.m */,
+				7DA268F8241B5E4B00C1653C /* ExampleVC_InjectCollectionView2.geojson */,
+				7DA268FA241B5E4B00C1653C /* ExampleVC_InjectCollectionView.geojson */,
+			);
+			path = JCS_InjectCollectionView;
+			sourceTree = "<group>";
+		};
+		7DA268FC241B5E4B00C1653C /* JCS_InjectTableView */ = {
+			isa = PBXGroup;
+			children = (
+				7DA268FE241B5E4B00C1653C /* Example_InjectTableView.h */,
+				7DA268FD241B5E4B00C1653C /* Example_InjectTableView.m */,
+				7DA268FF241B5E4B00C1653C /* Example_InjectTableView.geojson */,
+			);
+			path = JCS_InjectTableView;
+			sourceTree = "<group>";
+		};
+		7DA26905241B5F0300C1653C /* JCS_ScrollEmptyDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7DA26906241B5F3400C1653C /* ExampleVC_EmptyDemo.h */,
+				7DA26907241B5F3400C1653C /* ExampleVC_EmptyDemo.m */,
+			);
+			path = JCS_ScrollEmptyDemo;
 			sourceTree = "<group>";
 		};
 		C1E0B2858A905F7CC92389A9 /* Pods */ = {
@@ -1382,10 +1430,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA26904241B5E4C00C1653C /* Example_InjectTableView.geojson in Resources */,
 				7DA268A5241A511200C1653C /* ExampleListVC.geojson in Resources */,
+				7DA26902241B5E4C00C1653C /* ExampleVC_InjectCollectionView.geojson in Resources */,
 				7D056E5523EC0FDA00E55653 /* LaunchScreen.storyboard in Resources */,
 				7D056E5223EC0FDA00E55653 /* Assets.xcassets in Resources */,
 				7D056E5023EC0FD700E55653 /* Main.storyboard in Resources */,
+				7DA26900241B5E4B00C1653C /* ExampleVC_InjectCollectionView2.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1475,6 +1526,7 @@
 				7DA2681D2419D32500C1653C /* NSObject+JCS_Extension.m in Sources */,
 				7D056E4723EC0FD700E55653 /* AppDelegate.m in Sources */,
 				7DA2680B2419D32500C1653C /* NSDate+JCS_Extension.m in Sources */,
+				7DA26901241B5E4C00C1653C /* ExampleVC_InjectCollectionView.m in Sources */,
 				7DA268502419D32500C1653C /* UITextView+JCS_Create.m in Sources */,
 				7DA268242419D32500C1653C /* NSObject+JCS_Injection.m in Sources */,
 				7DA2687E241A4B2B00C1653C /* ExampleListVC.m in Sources */,
@@ -1505,6 +1557,7 @@
 				7DA2684E2419D32500C1653C /* UICollectionViewCell+JCSCreate.m in Sources */,
 				7DA2683B2419D32500C1653C /* JCS_ConvertTool.m in Sources */,
 				7DA2682A2419D32500C1653C /* NSObject+JCSCreate.m in Sources */,
+				7DA26908241B5F3400C1653C /* ExampleVC_EmptyDemo.m in Sources */,
 				7DA2680D2419D32500C1653C /* NSData+JCS_Extension.m in Sources */,
 				7DA268352419D32500C1653C /* UITableViewCell+JCSCreate.m in Sources */,
 				7DA268EE241B3ADB00C1653C /* ExampleVC_JCS_ConfigCollectionView2_V.m in Sources */,
@@ -1532,6 +1585,7 @@
 				7DA268BD241B383100C1653C /* ExampleVC_JCS_ConfigTableView.m in Sources */,
 				7DA2683C2419D32500C1653C /* NSDictionary+JCS_Create.m in Sources */,
 				7DA268172419D32500C1653C /* UITableViewCell+JCS_Swizzle.m in Sources */,
+				7DA26903241B5E4C00C1653C /* Example_InjectTableView.m in Sources */,
 				7DA268252419D32500C1653C /* NSArray+JCS_Injection.m in Sources */,
 				7DA268132419D32500C1653C /* UIView+JCS_Swizzle.m in Sources */,
 				7DA268F1241B3ADB00C1653C /* ExampleVC_JCS_ConfigCollectionCompare_H.m in Sources */,

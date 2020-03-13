@@ -1,5 +1,81 @@
 {
     "page":[{
+        "header":{
+            "class":"ExampleSectionHeaderView",
+            "data":"JCS_Create"
+        },
+        "rows":[{
+            "data":{
+                "__class":"ExampleListItem",
+                "title":"UITableView扩展",
+                "jumpClass":"ExampleVC_JCS_ConfigTableView"
+            },
+            "clickRouter":"jcs://ExampleVC_JCS_ConfigTableView?title=TableView扩展"
+        },{
+            "data":{
+                "__class":"ExampleListItem",
+                "title":"JCS_ConfigCollectionView流式布局(垂直)",
+                "jumpClass":"ExampleVC_JCS_ConfigCollectionView_V"
+            },
+            "clickRouter":"jcs://ExampleVC_JCS_ConfigCollectionView_V?title=流式布局(垂直)"
+        },{
+            "data":{
+                "__class":"ExampleListItem",
+                "title":"JCS_ConfigCollectionView流式布局(水平)",
+                "jumpClass":"ExampleVC_JCS_ConfigCollectionView_H"
+            },
+            "clickRouter":"jcs://ExampleVC_JCS_ConfigCollectionView_H?title=流式布局(水平)"
+        },{
+            "data":{
+                "__class":"ExampleListItem",
+                "title":"JCS_ConfigCollectionView自定义布局(垂直)",
+                "jumpClass":"ExampleVC_JCS_ConfigCollectionView2_V"
+            },
+            "clickRouter":"jcs://ExampleVC_JCS_ConfigCollectionView2_V?title=自定义布局(垂直)"
+        },{
+            "data":{
+                "__class":"ExampleListItem",
+                "title":"JCS_ConfigCollectionView自定义布局(垂直)",
+                "jumpClass":"ExampleVC_JCS_ConfigCollectionView2_H"
+            },
+            "clickRouter":"jcs://ExampleVC_JCS_ConfigCollectionView2_H?title=自定义布局(垂直)"
+        },{
+            "data":{
+                "__class":"ExampleListItem",
+                "title":"JCS_ConfigCollectionView对比(垂直)",
+                "jumpClass":"ExampleVC_JCS_ConfigCollectionCompare_V"
+            },
+            "clickRouter":"jcs://ExampleVC_JCS_ConfigCollectionCompare_V?title=对比(垂直)"
+        },{
+            "data":{
+                "__class":"ExampleListItem",
+                "title":"JCS_ConfigCollectionView对比(水平)",
+                "jumpClass":"ExampleVC_JCS_ConfigCollectionCompare_H"
+            },
+            "clickRouter":"jcs://ExampleVC_JCS_ConfigCollectionCompare_H?title=对比(水平)"
+        },{
+            "data":{
+                "__class":"ExampleListItem",
+                "title":"注入方式配置CollectionView",
+                "jumpClass":"ExampleVC_InjectCollectionView"
+            },
+            "clickRouter":"jcs://ExampleVC_InjectCollectionView?title=注入方式配置CollectionView"
+        },{
+            "data":{
+                "__class":"ExampleListItem",
+                "title":"注入方式配置TableView",
+                "jumpClass":"Example_InjectTableView"
+            },
+            "clickRouter":"jcs://Example_InjectTableView?title=注入方式配置TableView"
+        },{
+            "data":{
+                "__class":"ExampleListItem",
+                "title":"ScrollEmptyDemo",
+                "jumpClass":"ExampleVC_EmptyDemo"
+            },
+            "clickRouter":"jcs://ExampleVC_EmptyDemo?title=ScrollEmptyDemo"
+        }]
+    },{
         "hidden":true,
         "header":{
             "class":"ExampleSectionHeaderView",
@@ -65,47 +141,6 @@
                 "jumpClass":"BaseLib_ExampleVC"
             },
             "clickRouter":"jcs://Router_ExampleVC?title=JCS_Router"
-        }]
-    },{
-        "header":{
-            "class":"ExampleSectionHeaderView",
-            "data":"JCS_Create"
-        },
-        "rows":[{
-            "data":{
-                "__class":"ExampleListItem",
-                "title":"UITableView扩展",
-                "jumpClass":"ExampleVC_JCS_ConfigTableView"
-            },
-            "clickRouter":"jcs://ExampleVC_JCS_ConfigTableView?title=TableView扩展"
-        },{
-            "data":{
-                "__class":"ExampleListItem",
-                "title":"JCS_ConfigCollectionView流式布局(垂直)",
-                "jumpClass":"ExampleVC_JCS_ConfigCollectionView_V"
-            },
-            "clickRouter":"jcs://ExampleVC_JCS_ConfigCollectionView_V?title=流式布局(垂直)"
-        },{
-            "data":{
-                "__class":"ExampleListItem",
-                "title":"JCS_ConfigCollectionView流式布局(水平)",
-                "jumpClass":"ExampleVC_JCS_ConfigCollectionView_H"
-            },
-            "clickRouter":"jcs://ExampleVC_JCS_ConfigCollectionView_H?title=流式布局(水平)"
-        },{
-            "data":{
-                "__class":"ExampleListItem",
-                "title":"JCS_ConfigCollectionView对比(垂直)",
-                "jumpClass":"ExampleVC_JCS_ConfigCollectionCompare_V"
-            },
-            "clickRouter":"jcs://ExampleVC_JCS_ConfigCollectionCompare_V?title=对比(垂直)"
-        },{
-            "data":{
-                "__class":"ExampleListItem",
-                "title":"JCS_ConfigCollectionView对比(水平)",
-                "jumpClass":"ExampleVC_JCS_ConfigCollectionCompare_H"
-            },
-            "clickRouter":"jcs://ExampleVC_JCS_ConfigCollectionCompare_H?title=对比(水平)"
         }]
     }]
 }
