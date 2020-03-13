@@ -23,38 +23,15 @@
 
 - (void)jcs_setup {
     [super jcs_setup];
-    
     [UITableView jcs_createGroupTableView].jcs_layout(self, ^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }).jcs_toTableView()
     .jcs_defaultCellClassName(@"ExampleListCell")
     .jcs_estimatedRowHeight(50)
+    .jcs_sectionHeaderHeight(60)
+    .jcs_tableHeaderView_Empty()
+    .jcs_tableFooterView_Empty()
     .jcs_associated(&_tableView);
-    
-//    {
-//        "data": {
-//            "exampleList":[{
-//                "title":"JCS_BaseLib",
-//                "classname":"BaseLib_ExampleVC"
-//            },{
-//                "title":"JCS_Category",
-//                "classname":"Category_ExampleVC"
-//            },{
-//                "title":"JCS_EventBus",
-//                "classname":"EventBus_ExampleVC"
-//            },{
-//                "title":"JCS_Injection",
-//                "classname":"Injection_ExampleVC"
-//            },{
-//                "title":"JCS_Router",
-//                "classname":"Router_ExampleVC"
-//            },{
-//                "title":"JCS_Create",
-//                "classname":"Create_ExampleVC"
-//            }]
-//        }
-//    }
-    
 }
 
 - (void)jcs_request {

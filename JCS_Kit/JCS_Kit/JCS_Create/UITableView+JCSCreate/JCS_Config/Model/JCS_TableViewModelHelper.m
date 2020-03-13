@@ -121,39 +121,55 @@
  思路
  1. 配置了headerClass则不再走headerTitle, 未配置headerClass才走headerTitle
  */
-+ (CGFloat)getHeaderSectionHeight:(id<JCS_TableViewSectionProtocol>)model {
++ (CGFloat)getHeaderSectionHeight:(id<JCS_TableViewSectionProtocol>)model tableView:(UITableView*)tableView{
     
-    CGFloat height = 0;
-    if([model respondsToSelector:@selector(jcs_getHeaderHeight)]) {
+    BOOL hasHeader = NO;
+    if([model respondsToSelector:@selector(jcs_getHeaderViewClassName)] && model.jcs_getHeaderViewClassName.jcs_isValid){
+        hasHeader = YES;
+    }
+    if([model respondsToSelector:@selector(jcs_getHeaderTitle)]  && model.jcs_getHeaderTitle.jcs_isValid){
+        hasHeader = YES;
+    }
+    
+    CGFloat height = MAX(tableView.sectionHeaderHeight,0);
+    if([model respondsToSelector:@selector(jcs_getHeaderHeight)]
+       && [model jcs_getHeaderHeight] > 0) {
         height = [model jcs_getHeaderHeight];
     }
     
-    if([model respondsToSelector:@selector(jcs_getHeaderViewClassName)] && model.jcs_getHeaderViewClassName.jcs_isValid){
-        return height; //实际高度
+    //没有header，则直接返回0
+    if(hasHeader){
+        //有header时，如果没有header，则默认44
+        return height > 0 ? height : 44;
+    } else {
+        //没有Header,则配置多少显示多少，不做为0判断
+        return height;
     }
-    
-    if([model respondsToSelector:@selector(jcs_getHeaderTitle)]  && model.jcs_getHeaderTitle.jcs_isValid){
-        return height > 0 ? height : 44; //实际高度
-    }
-    
-    return 0; //不需要显示
 }
-+ (CGFloat)getFooterSectionHeight:(id<JCS_TableViewSectionProtocol>)model{
++ (CGFloat)getFooterSectionHeight:(id<JCS_TableViewSectionProtocol>)model  tableView:(UITableView*)tableView{
     
-    CGFloat height = 0;
-    if([model respondsToSelector:@selector(jcs_getFooterHeight)] ) {
-        height = [model jcs_getFooterHeight];
-    }
-    
+    BOOL hasFooter = NO;
     if([model respondsToSelector:@selector(jcs_getFooterViewClassName)]  && model.jcs_getFooterViewClassName.jcs_isValid){
-        return height; //实际高度
+        hasFooter = YES;
     }
-    
     if([model respondsToSelector:@selector(jcs_getFooterTitle)]  && model.jcs_getFooterTitle.jcs_isValid){
-        return height > 0 ? height : 44; //实际高度
+        hasFooter = YES;
     }
     
-    return 0; //不需要显示
+    CGFloat height = MAX(tableView.sectionFooterHeight,0);
+    if([model respondsToSelector:@selector(jcs_getFooterHeight)]
+      && [model jcs_getFooterHeight] > 0) {
+       height = [model jcs_getFooterHeight];
+    }
+
+    //没有footer，则直接返回0
+    if(hasFooter){
+       //有footer时，如果没有height，则默认44
+       return height > 0 ? height : 44;
+    } else {
+       //没有footer,则配置多少显示多少，不做为0判断
+       return height;
+    }
 }
 
 

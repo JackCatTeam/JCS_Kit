@@ -57,6 +57,7 @@
 
 @property (nonatomic,copy,readonly) UITableView*(^jcs_tableHeaderView)(UIView *headerView);
 @property (nonatomic,copy,readonly) UITableView*(^jcs_tableFooterView)(UIView *footerView);
+@property (nonatomic,copy,readonly) UITableView*(^jcs_tableHeaderView_Empty)(void);
 @property (nonatomic,copy,readonly) UITableView*(^jcs_tableFooterView_Empty)(void);
 
 @property (nonatomic,copy,readonly) UITableView*(^jcs_editing)(BOOL editing);

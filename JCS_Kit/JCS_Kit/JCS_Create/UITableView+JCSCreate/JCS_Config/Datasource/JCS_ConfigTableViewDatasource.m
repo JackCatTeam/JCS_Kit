@@ -208,7 +208,7 @@
     }
     
     //2. Config
-    return [JCS_TableViewSectionModelHelper getHeaderSectionHeight:self.sections[section]];
+    return [JCS_TableViewSectionModelHelper getHeaderSectionHeight:self.sections[section] tableView:tableView];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     //1. 外部代理
@@ -217,7 +217,7 @@
     }
     
     //2. Config
-    return [JCS_TableViewSectionModelHelper getFooterSectionHeight:self.sections[section]];
+    return [JCS_TableViewSectionModelHelper getFooterSectionHeight:self.sections[section] tableView:tableView];
 }
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     //1. 外部代理

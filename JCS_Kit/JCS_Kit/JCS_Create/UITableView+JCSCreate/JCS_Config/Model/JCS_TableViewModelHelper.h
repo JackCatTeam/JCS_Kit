@@ -28,8 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString*)getSectionHeaderTitle:(id<JCS_TableViewSectionProtocol>)model;
 + (NSString*)getSectionFooterTitle:(id<JCS_TableViewSectionProtocol>)model;
 
-+ (CGFloat)getHeaderSectionHeight:(id<JCS_TableViewSectionProtocol>)model;
-+ (CGFloat)getFooterSectionHeight:(id<JCS_TableViewSectionProtocol>)model;
++ (CGFloat)getHeaderSectionHeight:(id<JCS_TableViewSectionProtocol>)model  tableView:(UITableView*)tableView;
++ (CGFloat)getFooterSectionHeight:(id<JCS_TableViewSectionProtocol>)model  tableView:(UITableView*)tableView;
 
 @end
 

@@ -28,7 +28,11 @@
 
 - (void)setJcs_data:(id)jcs_data {
     [super setJcs_data:jcs_data];
-    self.titleLabel.text = [jcs_data valueForKey:@"title"];
+    if([jcs_data isKindOfClass:NSString.class]){
+        self.titleLabel.text = jcs_data;
+    } else if([jcs_data isKindOfClass:NSDictionary.class]){
+        self.titleLabel.text = [jcs_data valueForKey:@"title"];
+    }
 }
 
 

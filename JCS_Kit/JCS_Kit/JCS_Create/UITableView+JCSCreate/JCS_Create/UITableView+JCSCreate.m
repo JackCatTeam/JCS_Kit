@@ -198,6 +198,12 @@
         return self;
     };
 }
+- (UITableView *(^)(UIView *))jcs_tableHeaderView_Empty{
+    return ^id(UIView *value) {
+        self.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+        return self;
+    };
+}
 - (UITableView *(^)(UIView *))jcs_tableFooterView{
     return ^id(UIView *value) {
         self.tableFooterView = value;

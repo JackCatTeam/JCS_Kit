@@ -22,7 +22,7 @@
 - (void)jcs_setupUI {
     //Title
     [UILabel jcs_create].jcs_layout(self.contentView, ^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(16);
+        make.left.mas_equalTo(25);
         make.top.mas_equalTo(8);
     }).jcs_toLabel()
     .jcs_fontSize(14)
