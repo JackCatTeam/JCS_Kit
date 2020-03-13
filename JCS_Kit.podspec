@@ -1,141 +1,63 @@
-#
-#  Be sure to run `pod spec lint BLAPIManagers.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
 
 Pod::Spec.new do |s|
 
-  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  These will help people to find your library, and whilst it
-  #  can feel like a chore to fill in it's definitely to your advantage. The
-  #  summary should be tweet-length, and the description more in depth.
-  #
-
   s.name         = "JCS_Kit"
-  s.version      = "1.0.5"
+  s.version      = "1.0.8"
   s.summary      = "JCS_Kit."
-
-  # This description is used to generate tags and improve search results.
-  #   * Think: What does it do? Why did you write it? What is the focus?
-  #   * Try to keep it short, snappy and to the point.
-  #   * Write the description between the DESC delimiters below.
-  #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
                     this is JCS_Kit
                    DESC
-
+                   
   s.homepage     = "https://github.com/jcsteam/JCS_Kit"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-
-
-  # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Licensing your code is important. See http://choosealicense.com for more info.
-  #  CocoaPods will detect a license file if there is a named LICENSE*
-  #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
-  #
-
-  # s.license      = "MIT (example)"
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-
-
-  # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the authors of the library, with email addresses. Email addresses
-  #  of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also
-  #  accepts just a name if you'd rather not provide an email address.
-  #
-  #  Specify a social_media_url where others can refer to, for example a twitter
-  #  profile URL.
-  #
-
-  s.author             = { "devjackcat" => "devjackcat@163.com" }
-  # Or just: s.author    = "devjackcat"
-  # s.authors            = { "devjackcat" => "devjackcat@163.com" }
-  # s.social_media_url   = ""
-
-  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If this Pod runs only on iOS or OS X, then specify the platform and
-  #  the deployment target. You can optionally include the target after the platform.
-  #
-
-  # s.platform     = :ios
-  s.platform     = :ios, "9.0"
-
-  #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
-  # s.watchos.deployment_target = "2.0"
-  # s.tvos.deployment_target = "9.0"
-
-
-  # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the location from where the source should be retrieved.
-  #  Supports git, hg, bzr, svn and HTTP.
-  #
-
   s.source       = { :git => "https://github.com/jcsteam/JCS_Kit.git", :tag => s.version.to_s }
-
-
-  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  CocoaPods is smart about how it includes source code. For source files
-  #  giving a folder will include any swift, h, m, mm, c & cpp files.
-  #  For header files it will include any header in the folder.
-  #  Not including the public_header_files will make all headers public.
-  #
-
   s.source_files  = "JCS_Kit/JCS_Kit/**/*.{h,m,swift}"
-  # s.exclude_files = "Classes/Exclude"
-
-  # s.public_header_files = "Classes/**/*.h"
-
-
-  # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  A list of resources included with the Pod. These are copied into the
-  #  target bundle with a build phase script. Anything else will be cleaned.
-  #  You can preserve files from being cleaned, please don't preserve
-  #  non-essential files like tests, examples and documentation.
-  #
-
-  # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
-
-  # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
-
-
-  # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Link your library with frameworks, or libraries. Libraries do not include
-  #  the lib prefix of their name.
-  #
-
-  # s.framework  = "SomeFramework"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
-
-  # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
-
-
-  # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If your library depends on compiler flags you can set them in the xcconfig hash
-  #  where they will only apply to your library. If you depend on other Podspecs
-  #  you can include multiple dependencies to ensure it works.
-
+  
+  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.author             = { "devjackcat" => "devjackcat@163.com" }
+  s.platform     = :ios, "9.0"
+  
+    s.subspec 'BaseLib' do |ss|
+      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_BaseLib/**/*.{h,m,swift}'
+    end
+    
+    s.subspec 'Category' do |ss|
+      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Category/**/*.{h,m,swift}'
+      ss.dependency 'FastCoding'
+      ss.dependency 'JCS_Kit/BaseLib'
+    end
+    
+    s.subspec 'EventBus' do |ss|
+      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_EventBus/**/*.{h,m,swift}'
+      ss.dependency 'JCS_Kit/BaseLib'
+      ss.dependency 'JCS_Kit/Category'
+    end
+    
+    s.subspec 'Injection' do |ss|
+      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Injection/**/*.{h,m,swift}'
+      ss.dependency 'JCS_Kit/Category'
+      ss.dependency 'MJExtension'
+    end
+    
+    s.subspec 'Router' do |ss|
+      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Router/**/*.{h,m,swift}'
+      ss.dependency 'JCS_Kit/Category'
+      ss.dependency 'JCS_Kit/BaseLib'
+    end
+    
+    s.subspec 'JCS_Create' do |ss|
+      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Create/**/*.{h,m,swift}'
+      ss.dependency "JCS_Kit/BaseLib"
+      ss.dependency "JCS_Kit/Category"
+      ss.dependency "JCS_Kit/Router"
+      ss.dependency "JCS_Kit/Injection"
+      ss.dependency "JCS_Kit/EventBus"
+      ss.dependency "Masonry"
+      ss.dependency "SDWebImage"
+      ss.dependency "ReactiveObjC"
+      ss.dependency "MJRefresh"
+    end
+  
   s.requires_arc = true
-
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "BLNetworking"
-  # s.dependency "BLAPIManagers"
-  # s.dependency "BLMediator"
   
   s.dependency 'FastCoding'
   s.dependency 'Masonry'
