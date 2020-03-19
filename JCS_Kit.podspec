@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JCS_Kit"
-  s.version      = "1.0.10"
+  s.version      = "1.0.11"
   s.summary      = "JCS_Kit."
   s.description  = <<-DESC
                     this is JCS_Kit
