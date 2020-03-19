@@ -20,7 +20,8 @@
 
 
 - (void)jcs_setupUI {
-    self.jcs_backgroundColor(JCS_COLOR_HEX(0xdddddd));
+//    self.jcs_backgroundColor(JCS_COLOR_HEX(0xdddddd));
+    self.jcs_randomBackgroundColor();
     
     [UILabel jcs_create].jcs_layout(self.contentView, ^(MASConstraintMaker *make) {
         make.edges.equalTo(self.contentView);

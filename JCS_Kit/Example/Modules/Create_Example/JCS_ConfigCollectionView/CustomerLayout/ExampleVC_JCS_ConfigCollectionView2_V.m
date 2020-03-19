@@ -57,27 +57,31 @@
             
             {
                 section = [JCS_CollectionViewSectionModel jcs_create];
-//                section.headerClass = @"DemoCollectionSectionHeaderView";
-//                section.footerClass = @"DemoCollectionSectionFooterView";
-//                section.headerSize = CGSizeMake(width, 50);
-//                section.footerSize = CGSizeMake(width, 100);
-//                section.headerData = @{@"title":@"header - 1"};
-//                section.footerData = @{@"title":@"footer - 1"};
+                section.headerClass = @"DemoCollectionSectionHeaderView";
+                section.footerClass = @"DemoCollectionSectionFooterView";
+                section.headerSize = CGSizeMake(width, 50);
+                section.footerSize = CGSizeMake(width, 100);
+                section.headerMarginInsets = UIEdgeInsetsMake(10, 10, 10, 0);
+                section.footerMarginInsets = UIEdgeInsetsMake(10, 10, 10, 0);
+                section.headerData = @{@"title":@"header - 1"};
+                section.footerData = @{@"title":@"footer - 1"};
+//                section.sectionInset = UIEdgeInsetsMake(10, 0, 10, 0);
+                
 //                section.sectionInset = UIEdgeInsetsMake(10, 10, 10, 0);
-//                section.minimumLineSpacing = 20;
-//                section.minimumInteritemSpacing = 20;
+                section.minimumLineSpacing = CGFLOAT_MIN;
+                section.minimumInteritemSpacing = CGFLOAT_MIN;
 //                section.decorationClass = @"DemoCollectionDecorationVIew";
 //                section.decorationMarginInset = UIEdgeInsetsMake(10, 10, 10, 10);
 //                section.decorationZIndex = 100;
 //                section.decorationData = @{@"decoration":@"decoration data"};
                 
-//                section.columnCount = 3;
+                section.columnCount = 4;
                 [_sections addObject:section];
             
-                for (NSInteger jndex = 0; jndex < 9; jndex++) {
+                for (NSInteger jndex = 0; jndex < 10; jndex++) {
                     item = [JCS_CollectionViewItemModel jcs_create];
                     item.cellClass = @"DemoCollectionViewCell";
-                    item.cellSize = CGSizeMake(100, 100);
+                    item.cellSize = CGSizeMake(JCS_SCREEN_WIDTH/4.0, 100);
                     item.data = @{@"title":[NSString stringWithFormat:@"%zd-%zd",index,jndex]};
                     [section.items addObject:item];
                 }

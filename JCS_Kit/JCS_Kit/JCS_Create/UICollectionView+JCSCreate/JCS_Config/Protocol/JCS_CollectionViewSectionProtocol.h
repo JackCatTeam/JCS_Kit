@@ -32,6 +32,9 @@
 - (CGSize)jcs_getHeaderSize;
 - (CGSize)jcs_getFooterSize;
 
+- (UIEdgeInsets)jcs_getHeaderMarginInset;
+- (UIEdgeInsets)jcs_getFooterMarginInset;
+
 - (UIEdgeInsets)jcs_getSectionInset;
 
 - (CGFloat)jcs_getMinimumLineSpacing;

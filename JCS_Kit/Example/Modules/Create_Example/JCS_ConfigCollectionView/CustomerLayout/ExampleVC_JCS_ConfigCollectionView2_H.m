@@ -46,35 +46,35 @@
     if(!_sections){
         _sections = [NSMutableArray array];
         
-        CGFloat margin = self.collectionView.contentInset.top + self.collectionView.contentInset.bottom;
-        
         JCS_CollectionViewSectionModel *section = nil;
         JCS_CollectionViewItemModel *item = nil;
         for(NSInteger index=0;index < 5; index++)
         {
             section = [JCS_CollectionViewSectionModel jcs_create];
-//            section.headerClass = @"DemoCollectionSectionHeaderView";
-//            section.footerClass = @"DemoCollectionSectionFooterView";
-//            section.headerSize = CGSizeMake(30, 300 - margin);
-//            section.footerSize = CGSizeMake(50, 300 - margin);
-//            section.headerData = @{@"title":@"header - 1"};
-//            section.footerData = @{@"title":@"footer - 1"};
+            section.headerClass = @"DemoCollectionSectionHeaderView";
+            section.footerClass = @"DemoCollectionSectionFooterView";
+            section.headerSize = CGSizeMake(50, 300);
+            section.footerSize = CGSizeMake(50, 300);
+            section.headerMarginInsets = UIEdgeInsetsMake(10, 10, 0, 10);
+            section.footerMarginInsets = UIEdgeInsetsMake(10, 10, 0, 10);
+            section.headerData = @{@"title":@"header - 1"};
+            section.footerData = @{@"title":@"footer - 1"};
 //            section.sectionInset = UIEdgeInsetsMake(10, 10, 10, 0);
-//            section.minimumLineSpacing = 10;
-//            section.minimumInteritemSpacing = 10;
+            section.minimumLineSpacing = CGFLOAT_MIN;
+            section.minimumInteritemSpacing = CGFLOAT_MIN;
             
 //            section.decorationClass = @"DemoCollectionDecorationVIew";
 //            section.decorationMarginInset = UIEdgeInsetsMake(10, 10, 10, 10);
 //            section.decorationZIndex = 100;
 //            section.decorationData = @{@"decoration":@"decoration data"};
             
-//            section.columnCount = 3;
+            section.columnCount = 3;
             [_sections addObject:section];
         
             for (NSInteger index = 0; index < 9; index++) {
                 item = [JCS_CollectionViewItemModel jcs_create];
                 item.cellClass = @"DemoCollectionViewCell";
-                item.cellSize = CGSizeMake(80,80);
+                item.cellSize = CGSizeMake(100,100);
                 item.data = @{@"title":[NSString stringWithFormat:@"%d-%zd",1,index]};
                 [section.items addObject:item];
             }

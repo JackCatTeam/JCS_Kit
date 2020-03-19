@@ -19,6 +19,8 @@
 
 /** 每个Section.Top距离UICollectionView.top的偏移量 **/
 @property (nonatomic, strong) NSMutableArray *sectionItemMargins;
+/** 最后一个SectionModel **/
+@property (nonatomic, strong) id<JCS_CollectionViewSectionProtocol> preSectionModel;
 
 @end
 
@@ -144,15 +146,35 @@
     id<UICollectionViewDelegateFlowLayout> layoutDelegate = (id<UICollectionViewDelegateFlowLayout>)self.collectionView.delegate;
     CGSize headerSize =  [layoutDelegate collectionView:self.collectionView layout:self referenceSizeForHeaderInSection:indexPath.section];
     
+    //sectoinModel
+    id<JCS_CollectionViewSectionProtocol> sectionModel = [self.customerDelegate jcs_waterFallLayout:self sectionWithIndexPath:indexPath.section];
+    
     CGFloat itemWidth = headerSize.width;
     CGFloat itemHeight = itemHeight = headerSize.height;
-    CGFloat cellX = 0;//sectionModel.sectionInset.left;
+    CGFloat cellX = 0;
     CGFloat cellYInCollectioinView = preLayoutAttribute?CGRectGetMaxY(preLayoutAttribute.frame):0;
+    
+    //偏移量
+    //上一个分区的footer margin bottom
+    if(self.preSectionModel && [self.preSectionModel respondsToSelector:@selector(jcs_getFooterMarginInset)]){
+        cellYInCollectioinView += self.preSectionModel.jcs_getFooterMarginInset.bottom;
+    }
+    //当前section偏移量
+    CGFloat headerBottomInset = 0;
+    CGFloat headerTopInset = 0;
+    if(sectionModel && [sectionModel respondsToSelector:@selector(jcs_getHeaderMarginInset)]){
+        headerTopInset = sectionModel.jcs_getHeaderMarginInset.top;
+        headerBottomInset = sectionModel.jcs_getHeaderMarginInset.bottom;
+        
+        cellX += sectionModel.jcs_getHeaderMarginInset.left;
+        cellYInCollectioinView += headerTopInset;
+    }
     
     //SectionHeader顶部和上一个SectionFooter之间没有缝隙，所以不用加间距
     layoutAttribute.frame = CGRectMake(cellX, cellYInCollectioinView, itemWidth, itemHeight);
     //记录内容的高度
-    self.contentHeight = MAX(self.contentHeight,CGRectGetMaxY(layoutAttribute.frame));
+    
+    self.contentHeight = MAX(self.contentHeight,(CGRectGetMaxY(layoutAttribute.frame) + headerBottomInset));
 }
 ///计算SectionHeader layoutAttribute
 - (void)horizontal_calculateSectionHeaderLayoutAttribute:(NSIndexPath*)indexPath
@@ -166,16 +188,35 @@
     id<UICollectionViewDelegateFlowLayout> layoutDelegate = (id<UICollectionViewDelegateFlowLayout>)self.collectionView.delegate;
     CGSize headerSize =  [layoutDelegate collectionView:self.collectionView layout:self referenceSizeForHeaderInSection:indexPath.section];
 
+    //sectoinModel
+    id<JCS_CollectionViewSectionProtocol> sectionModel = [self.customerDelegate jcs_waterFallLayout:self sectionWithIndexPath:indexPath.section];
+    
     CGFloat itemWidth = headerSize.width;
     CGFloat itemHeight = headerSize.height;
 
     CGFloat cellXInCollectioinView = preLayoutAttribute?CGRectGetMaxX(preLayoutAttribute.frame):0;
     CGFloat cellY = 0;//sectionModel.sectionInset.top;
     
+    //偏移量
+    //上一个分区的footer margin left
+    if(self.preSectionModel && [self.preSectionModel respondsToSelector:@selector(jcs_getFooterMarginInset)]){
+        cellXInCollectioinView += self.preSectionModel.jcs_getFooterMarginInset.left;
+    }
+    //当前section偏移量
+    CGFloat headerRightInset = 0;
+    CGFloat headerLeftInset = 0;
+    if(sectionModel && [sectionModel respondsToSelector:@selector(jcs_getHeaderMarginInset)]){
+        headerLeftInset = sectionModel.jcs_getHeaderMarginInset.left;
+        headerRightInset = sectionModel.jcs_getHeaderMarginInset.right;
+        
+        cellY += sectionModel.jcs_getHeaderMarginInset.top;
+        cellXInCollectioinView += headerLeftInset;
+    }
+    
     //SectionHeader顶部和上一个SectionFooter之间没有缝隙，所以不用加间距
     layoutAttribute.frame = CGRectMake(cellXInCollectioinView, cellY, itemWidth, itemHeight);
     //记录内容的宽度
-    self.contentWidth = MAX(self.contentWidth,CGRectGetMaxX(layoutAttribute.frame));
+    self.contentWidth = MAX(self.contentWidth,(CGRectGetMaxX(layoutAttribute.frame) + headerRightInset));
 }
 
 #pragma mark - calculateSectionFooterLayoutAttribute
@@ -188,6 +229,7 @@
     } else {
         [self horizontal_calculateSectionFooterLayoutAttribute:indexPath layoutAttribute:layoutAttribute];
     }
+    self.preSectionModel = [self.customerDelegate jcs_waterFallLayout:self sectionWithIndexPath:indexPath.section];
 }
 ///计算SectionFooter layoutAttribute
 - (void)vertical_calculateSectionFooterLayoutAttribute:(NSIndexPath*)indexPath
@@ -226,12 +268,33 @@
         }
     }
 
-    CGFloat cellX = 0;//sectionModel.sectionInset.left;
-    //sectionItemMargin + maxColumnHeight + sectionInset.bottom
+    CGFloat cellX = 0;
     CGFloat cellYInCollectioinView = [self.sectionItemMargins[indexPath.section] floatValue] + maxColumnHeight + sectionInset.bottom;
+    
+    //偏移量
+    //上一个分区的footer margin left
+    if(self.preSectionModel && [self.preSectionModel respondsToSelector:@selector(jcs_getFooterMarginInset)]){
+        cellYInCollectioinView += self.preSectionModel.jcs_getFooterMarginInset.bottom;
+    }
+    CGFloat headerBottomInset = 0;
+    CGFloat headerTopInset = 0;
+    if(sectionModel && [sectionModel respondsToSelector:@selector(jcs_getHeaderMarginInset)]){
+        headerTopInset = sectionModel.jcs_getHeaderMarginInset.top;
+        headerBottomInset = sectionModel.jcs_getHeaderMarginInset.bottom;
+    }
+    CGFloat footerBottomInset = 0;
+    CGFloat footerTopInset = 0;
+    if(sectionModel && [sectionModel respondsToSelector:@selector(jcs_getFooterMarginInset)]){
+        footerTopInset = sectionModel.jcs_getFooterMarginInset.top;
+        footerBottomInset = sectionModel.jcs_getFooterMarginInset.bottom;
+
+        cellX += sectionModel.jcs_getFooterMarginInset.left;
+        cellYInCollectioinView += (footerTopInset + headerTopInset + headerBottomInset);
+    }
+    
     layoutAttribute.frame = CGRectMake(cellX, cellYInCollectioinView, itemWidth, itemHeight);
     //记录内容的高度
-    self.contentHeight = MAX(self.contentHeight,CGRectGetMaxY(layoutAttribute.frame));
+    self.contentHeight = MAX(self.contentHeight,(CGRectGetMaxY(layoutAttribute.frame) + footerBottomInset));
 }
 ///计算SectionFooter layoutAttribute
 - (void)horizontal_calculateSectionFooterLayoutAttribute:(NSIndexPath*)indexPath
@@ -275,9 +338,31 @@
     CGFloat cellXInCollectioinView = [self.sectionItemMargins[indexPath.section] floatValue] + maxColumnLength + sectionInset.right;
     CGFloat cellY = 0;//sectionModel.sectionInset.top;
     
+    //偏移量
+    //上一个分区的footer margin left
+    if(self.preSectionModel && [self.preSectionModel respondsToSelector:@selector(jcs_getFooterMarginInset)]){
+        cellXInCollectioinView += self.preSectionModel.jcs_getFooterMarginInset.right;
+    }
+    //当前分区
+    CGFloat headerLeftInset = 0;
+    CGFloat headerRightInset = 0;
+    if(sectionModel && [sectionModel respondsToSelector:@selector(jcs_getHeaderMarginInset)]){
+        headerLeftInset = sectionModel.jcs_getHeaderMarginInset.left;
+        headerRightInset = sectionModel.jcs_getHeaderMarginInset.right;
+    }
+    CGFloat footerLeftInset = 0;
+    CGFloat footerRightInset = 0;
+    if(sectionModel && [sectionModel respondsToSelector:@selector(jcs_getFooterMarginInset)]){
+        footerLeftInset = sectionModel.jcs_getFooterMarginInset.left;
+        footerRightInset = sectionModel.jcs_getFooterMarginInset.right;
+
+        cellY += sectionModel.jcs_getFooterMarginInset.left;
+        cellXInCollectioinView += (footerLeftInset + headerLeftInset + headerRightInset);
+    }
+    
     layoutAttribute.frame = CGRectMake(cellXInCollectioinView, cellY, itemWidth, itemHeight);
     //记录内容的宽度
-    self.contentWidth = MAX(self.contentWidth,CGRectGetMaxX(layoutAttribute.frame));
+    self.contentWidth = MAX(self.contentWidth,(CGRectGetMaxX(layoutAttribute.frame) + footerRightInset));
     
 }
 
@@ -344,6 +429,19 @@
     //当前Section中的Y,第一排不需要添加minimumLineSpacing
     CGFloat cellYInSection = minColumnHeight + (minColumnHeight > 0 ? minimumLineSpacing : 0);
     CGFloat cellYInCollectioinView = [self.sectionItemMargins[indexPath.section] floatValue] + cellYInSection;
+    //偏移量
+    //上一个分区的footer margin bottom
+    if(self.preSectionModel && [self.preSectionModel respondsToSelector:@selector(jcs_getFooterMarginInset)]){
+        cellYInCollectioinView += self.preSectionModel.jcs_getFooterMarginInset.bottom;
+    }
+    //当前分区偏移量
+    CGFloat headerBottomInset = 0;
+    CGFloat headerTopInset = 0;
+    if(sectionModel && [sectionModel respondsToSelector:@selector(jcs_getHeaderMarginInset)]){
+        headerTopInset = sectionModel.jcs_getHeaderMarginInset.top;
+        headerBottomInset = sectionModel.jcs_getHeaderMarginInset.bottom;
+        cellYInCollectioinView += (headerTopInset + headerBottomInset);
+    }
     
     layoutAttribute.frame = CGRectMake(cellX, cellYInCollectioinView, itemWidth, itemHeight);
     //更新最短那一列的高度
@@ -405,6 +503,19 @@
     //当前Section中的Y,第一列无需加上间隙minimumLineSpacing
     CGFloat cellXInSection = minColumnLength + (minColumnLength > 0 ? minimumLineSpacing : 0);
     CGFloat cellXInCollectioinView = [self.sectionItemMargins[indexPath.section] floatValue] + cellXInSection;
+    
+    //偏移量
+    //上一个分区的footer margin bottom
+    if(self.preSectionModel && [self.preSectionModel respondsToSelector:@selector(jcs_getFooterMarginInset)]){
+        cellXInCollectioinView += self.preSectionModel.jcs_getFooterMarginInset.right;
+    }
+    CGFloat headerLeftInset = 0;
+    CGFloat headerRightInset = 0;
+    if(sectionModel && [sectionModel respondsToSelector:@selector(jcs_getHeaderMarginInset)]){
+        headerLeftInset = sectionModel.jcs_getHeaderMarginInset.left;
+        headerRightInset = sectionModel.jcs_getHeaderMarginInset.right;
+        cellXInCollectioinView += (headerLeftInset + headerRightInset);
+    }
     
     layoutAttribute.frame = CGRectMake(cellXInCollectioinView, cellY, itemWidth, itemHeight);
     //更新最短那一列的高度

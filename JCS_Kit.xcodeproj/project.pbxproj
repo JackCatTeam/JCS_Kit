@@ -937,8 +937,8 @@
 			children = (
 				7DA267D82419D32400C1653C /* JCS_CollectionViewFlowLayout.h */,
 				7DA267DA2419D32400C1653C /* JCS_CollectionViewFlowLayout.m */,
-				7DA267D92419D32400C1653C /* JCS_CollectionViewWaterFallLayout.m */,
 				7DA267DB2419D32400C1653C /* JCS_CollectionViewWaterFallLayout.h */,
+				7DA267D92419D32400C1653C /* JCS_CollectionViewWaterFallLayout.m */,
 			);
 			path = Layout;
 			sourceTree = "<group>";

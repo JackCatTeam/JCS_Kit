@@ -38,10 +38,20 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy,nullable) NSString *headerClass;
 /** Header Class Size **/
 @property (nonatomic, assign) CGSize headerSize;
+/** headerMarginInsets
+ 注：1. 该属性只在JCS_CollectionViewWaterFallLayout中生效
+    2. 只有left、top、bottom三个属性有效，right不使用
+ **/
+@property (nonatomic, assign) UIEdgeInsets headerMarginInsets;
 /** Footer Class **/
 @property (nonatomic, copy,nullable) NSString *footerClass;
 /** Footer Class Size **/
 @property (nonatomic, assign) CGSize footerSize;
+/** footerMarginInsets
+ 注：1. 该属性只在JCS_CollectionViewWaterFallLayout中生效
+    2. 只有left、top、bottom三个属性有效，right不使用
+ **/
+@property (nonatomic, assign) UIEdgeInsets footerMarginInsets;
 /** sectionInset **/
 @property (nonatomic, assign) UIEdgeInsets sectionInset;
 

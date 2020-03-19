@@ -72,6 +72,14 @@
     return self.footerSize;
 }
 
+- (UIEdgeInsets)jcs_getHeaderMarginInset {
+    return self.headerMarginInsets;
+}
+
+- (UIEdgeInsets)jcs_getFooterMarginInset {
+    return self.footerMarginInsets;
+}
+
 - (UIEdgeInsets)jcs_getSectionInset {
     return self.sectionInset;
 }
