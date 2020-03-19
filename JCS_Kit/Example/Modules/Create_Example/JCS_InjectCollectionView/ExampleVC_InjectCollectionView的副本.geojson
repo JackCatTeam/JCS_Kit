@@ -51,7 +51,5 @@
             }
         },
         "items":"&sectionItems2"
-    },{
-        "forEach":"&forEachSections"
     }]
 }

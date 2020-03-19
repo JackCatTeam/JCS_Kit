@@ -8,6 +8,7 @@
 
 #import "UIViewController+JCS_Create.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import <FastCoding/FastCoder.h>
 #import "JCS_BaseLib.h"
 #import "JCS_Category.h"
 #import "JCS_Injection.h"
@@ -52,6 +53,13 @@
     NSMutableArray *sections = [NSMutableArray array];
     for (NSDictionary *section in sectionsConfigArray) {
         if([section isKindOfClass:NSDictionary.class]){ //字典
+            NSString *forEach = [section valueForKey:@"forEach"];
+            if(forEach.jcs_isValid){ //循环遍历
+                NSArray *array = [self jcs_handleDataValue:forEach];
+                for (NSInteger index = 0; index < array.count; index++) {
+                    [sections addObject:array[index]];
+                }
+            }
             JCS_CollectionViewSectionModel *sectionModel = [self jcs_generateCollectionViewSectionWithDict:section];
             if(sectionModel){
                 [sections addObject:sectionModel];
@@ -120,6 +128,11 @@
             sectionModel.headerSize = size;
         }
         
+        id marginInset = [header valueForKey:@"marginInset"];
+        if(marginInset){
+            sectionModel.headerMarginInsets = [JCS_ConvertTool valueToInsets:marginInset];
+        }
+        
         //headerData
         id headerData = [header valueForKey:@"data"];
         if(headerData){
@@ -140,6 +153,11 @@
         if(className.jcs_isValid && !CGSizeEqualToSize(size, CGSizeZero)){
             sectionModel.footerClass = className;
             sectionModel.footerSize = size;
+        }
+        
+        id marginInset = [footer valueForKey:@"marginInset"];
+        if(marginInset){
+            sectionModel.footerMarginInsets = [JCS_ConvertTool valueToInsets:marginInset];
         }
         
         //footerData
@@ -278,7 +296,15 @@
                 }
             }
             
-            [sectionModel.items addObject:itemModel];
+            NSString *forEach = [item valueForKey:@"forEach"];
+            if(forEach.jcs_isValid){ //循环遍历
+                NSArray *array = [self jcs_handleDataValue:forEach];
+                for (NSInteger index = 0; index < array.count; index++) {
+                    [sectionModel.items addObject:array[index]];
+                }
+            } else {
+                [sectionModel.items addObject:itemModel];
+            }
             
         } else if([item isKindOfClass:NSString.class] && [(NSString*)item hasPrefix:@"&"]){ //引用
             NSString *key = [(NSString*)item substringFromIndex:1];

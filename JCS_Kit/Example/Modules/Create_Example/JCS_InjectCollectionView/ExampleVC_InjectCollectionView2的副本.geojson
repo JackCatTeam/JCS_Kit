@@ -1,6 +1,6 @@
 {
     "page":["&sectionModel",{
-        "hidden":false,
+        "hidden":true,
         "columnCount":4,
         "items":[{
             "class":"DemoCollectionViewCell",
@@ -37,11 +37,6 @@
             "class":"DemoCollectionViewCell",
             "size":"80,80",
             "data":"2-4"
-        },{
-            "forEach":"&forEachItems",
-            "class":"DemoCollectionViewCell",
-            "size":"80,80",
-            "data":"2-4-1"
         }]
     }]
 }

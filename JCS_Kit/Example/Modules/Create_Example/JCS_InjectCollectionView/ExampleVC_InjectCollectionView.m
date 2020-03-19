@@ -22,6 +22,10 @@
 @property (nonatomic, strong) NSMutableArray<JCS_CollectionViewItemModel*> *sectionItems2;
 
 @property (nonatomic, copy) NSString *type;
+
+@property (nonatomic, strong) NSArray *forEachItems;
+/** <#备注#> **/
+@property (nonatomic, strong) NSMutableArray *forEachSections;
 @end
 
 @implementation ExampleVC_InjectCollectionView
@@ -31,7 +35,7 @@
 }
 
 - (NSString*)jcs_propertyConfigFileName {
-    return @"ExampleVC_InjectCollectionView2.geojson";
+    return @"ExampleVC_InjectCollectionView.geojson";
 }
 
 - (void)jcs_setup {
@@ -90,13 +94,40 @@
 }
 
 - (void)jcs_request {
+    
+//    self.forEachItems = @[@{},@{},@{},@{},@{}];
+    [self configForEachSections];
+    
     self.sections = [self jcs_generateCollectionViewSections];
     self.collectionView.jcs_customerSections(self.sections);
+}
+
+- (void)configForEachSections {
+    for (NSInteger index = 0; index < 5; index++) {
+        JCS_CollectionViewSectionModel *sectionModel = [JCS_CollectionViewSectionModel jcs_create];
+        sectionModel.columnCount = 3;
+        sectionModel.headerClass = @"DemoCollectionSectionHeaderView";
+        sectionModel.footerClass = @"DemoCollectionSectionFooterView";
+        sectionModel.headerSize = CGSizeMake(JCS_SCREEN_WIDTH, 20);
+        sectionModel.footerSize = CGSizeMake(JCS_SCREEN_WIDTH, 100);
+        for (NSInteger jndex = 0; jndex < 10; jndex++) {
+            JCS_CollectionViewItemModel *item = [JCS_CollectionViewItemModel jcs_create];
+            item.cellClass = @"DemoCollectionViewCell";
+            item.cellSize = CGSizeMake(80, 80);
+            item.data = @{@"title":[NSString stringWithFormat:@"%zd-%zd",index,jndex]};
+            if(index == 0){
+                item.clickRouter = @"ylt://PersonRouter/say2:?name=李四";
+            }
+            [sectionModel.items addObject:item];
+        }
+        [self.forEachSections addObject:sectionModel];
+    }
 }
 
 JCS_LAZY(NSMutableArray, sections)
 JCS_LAZY(NSMutableArray, sectionItems1)
 JCS_LAZY(NSMutableArray, sectionItems2)
+JCS_LAZY(NSMutableArray, forEachSections)
 
 - (JCS_CollectionViewSectionModel *)sectionModel {
     if(!_sectionModel){
