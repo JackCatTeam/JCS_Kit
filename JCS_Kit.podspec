@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JCS_Kit"
-  s.version      = "1.0.11"
+  s.version      = "1.0.12"
   s.summary      = "JCS_Kit."
   s.description  = <<-DESC
                     this is JCS_Kit
@@ -16,46 +16,46 @@ Pod::Spec.new do |s|
   s.author             = { "devjackcat" => "devjackcat@163.com" }
   s.platform     = :ios, "9.0"
   
-    s.subspec 'BaseLib' do |ss|
-      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_BaseLib/**/*.{h,m,swift}'
-    end
+    #s.subspec 'BaseLib' do |ss|
+    #  ss.source_files = 'JCS_Kit/JCS_Kit/JCS_BaseLib/**/*.{h,m,swift}'
+    #end
     
-    s.subspec 'Category' do |ss|
-      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Category/**/*.{h,m,swift}'
-      ss.dependency 'FastCoding'
-      ss.dependency 'JCS_Kit/BaseLib'
-    end
+    #s.subspec 'Category' do |ss|
+    #  ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Category/**/*.{h,m,swift}'
+    #  ss.dependency 'FastCoding'
+    #  ss.dependency 'JCS_Kit/BaseLib'
+    #end
     
-    s.subspec 'EventBus' do |ss|
-      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_EventBus/**/*.{h,m,swift}'
-      ss.dependency 'JCS_Kit/BaseLib'
-      ss.dependency 'JCS_Kit/Category'
-    end
+    #s.subspec 'EventBus' do |ss|
+    #  ss.source_files = 'JCS_Kit/JCS_Kit/JCS_EventBus/**/*.{h,m,swift}'
+    #  ss.dependency 'JCS_Kit/BaseLib'
+    #  ss.dependency 'JCS_Kit/Category'
+    #end
     
-    s.subspec 'Injection' do |ss|
-      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Injection/**/*.{h,m,swift}'
-      ss.dependency 'JCS_Kit/Category'
-      ss.dependency 'MJExtension'
-    end
+    #s.subspec 'Injection' do |ss|
+    #  ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Injection/**/*.{h,m,swift}'
+    #  ss.dependency 'JCS_Kit/Category'
+    #  ss.dependency 'MJExtension'
+    #end
     
-    s.subspec 'Router' do |ss|
-      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Router/**/*.{h,m,swift}'
-      ss.dependency 'JCS_Kit/Category'
-      ss.dependency 'JCS_Kit/BaseLib'
-    end
+    #s.subspec 'Router' do |ss|
+    #  ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Router/**/*.{h,m,swift}'
+    #  ss.dependency 'JCS_Kit/Category'
+    #  ss.dependency 'JCS_Kit/BaseLib'
+    #end
     
-    s.subspec 'Create' do |ss|
-      ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Create/**/*.{h,m,swift}'
-      ss.dependency "JCS_Kit/BaseLib"
-      ss.dependency "JCS_Kit/Category"
-      ss.dependency "JCS_Kit/Router"
-      ss.dependency "JCS_Kit/Injection"
-      ss.dependency "JCS_Kit/EventBus"
-      ss.dependency "Masonry"
-      ss.dependency "SDWebImage"
-      ss.dependency "ReactiveObjC"
-      ss.dependency "MJRefresh"
-    end
+    #s.subspec 'Create' do |ss|
+    #  ss.source_files = 'JCS_Kit/JCS_Kit/JCS_Create/**/*.{h,m,swift}'
+    #  ss.dependency "JCS_Kit/BaseLib"
+    #  ss.dependency "JCS_Kit/Category"
+    #  ss.dependency "JCS_Kit/Router"
+    #  ss.dependency "JCS_Kit/Injection"
+    #  ss.dependency "JCS_Kit/EventBus"
+    #  ss.dependency "Masonry"
+    #  ss.dependency "SDWebImage"
+    #  ss.dependency "ReactiveObjC"
+    #  ss.dependency "MJRefresh"
+    #end
   
   s.requires_arc = true
   
