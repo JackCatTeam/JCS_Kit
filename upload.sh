@@ -24,7 +24,7 @@ getTagName() {
 getTagName
 
 # 验证podspec文件是否合法
-pod lib lint JCS_Kit.podspec --sources=${gitsource}  --verbose --allow-warnings --use-libraries
+#pod lib lint JCS_Kit.podspec --sources=${gitsource}  --verbose --allow-warnings --use-libraries
 
 LineNumber=`grep -nE 's.version.*=' JCS_Kit.podspec | cut -d : -f1`
 sed -i "" "${LineNumber}s/^\([ ]*s.version[ ]*=[ ]*\"\)\(.*\)\(\"[ ]*\)$/\1${tag}\3/g" JCS_Kit.podspec
