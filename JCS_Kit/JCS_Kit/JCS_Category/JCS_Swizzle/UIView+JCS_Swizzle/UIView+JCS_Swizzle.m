@@ -61,6 +61,7 @@ static NSArray *blackList = nil;
     }
     if(!isBlack) {
         [self jcs_setupUI];
+        [self jcs_bindingSignal];
     }
     return self;
 }

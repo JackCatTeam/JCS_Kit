@@ -16,12 +16,12 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [UIViewController jcs_swizzleInstanceMethod:@selector(viewDidLoad) withMethod:@selector(jcs_viewDidLoad)];
+        [UIViewController jcs_swizzleInstanceMethod:@selector(viewDidLoad) withMethod:@selector(jcs_UIViewController_viewDidLoad)];
     });
 }
 
-- (void)jcs_viewDidLoad {
-    [self jcs_viewDidLoad];
+- (void)jcs_UIViewController_viewDidLoad {
+    [self jcs_UIViewController_viewDidLoad];
     
     [self jcs_setup];
     [self jcs_bindingSignal];
@@ -30,9 +30,7 @@
 }
 
 /// 设置控制器
-- (void)jcs_setup {
-//    self.view.backgroundColor = UIColor.whiteColor;
-}
+- (void)jcs_setup {}
 /// 注册通知
 - (void)jcs_registerNotifications {}
 /// 绑定信号
