@@ -558,6 +558,14 @@
     CGFloat width = self.collectionView.bounds.size.width - marginLeft - marginRight;
     CGFloat height = CGRectGetMaxY(sectionFrame) - y - marginBottom;
     
+    if([sectionModel respondsToSelector:@selector(jcs_getHeaderMarginInset)]){
+        y -= sectionModel.jcs_getHeaderMarginInset.top;
+        height += sectionModel.jcs_getHeaderMarginInset.top;
+    }
+    if([sectionModel respondsToSelector:@selector(jcs_getFooterMarginInset)]){
+        height += sectionModel.jcs_getFooterMarginInset.bottom;
+    }
+    
     layoutAttribute.frame = CGRectMake(x, y, width, height);
     
 }
@@ -582,6 +590,14 @@
     CGFloat x = CGRectGetMinX(sectionFrame) + marginLeft;
     CGFloat height = self.collectionView.bounds.size.height - marginTop - marginBottom;
     CGFloat width = CGRectGetMaxX(sectionFrame) - x - marginRight;
+    
+    if([sectionModel respondsToSelector:@selector(jcs_getHeaderMarginInset)]){
+        x -= sectionModel.jcs_getHeaderMarginInset.left;
+        width += sectionModel.jcs_getHeaderMarginInset.left;
+    }
+    if([sectionModel respondsToSelector:@selector(jcs_getFooterMarginInset)]){
+        width += sectionModel.jcs_getFooterMarginInset.right;
+    }
     
     layoutAttribute.frame = CGRectMake(x, y, width, height);
     

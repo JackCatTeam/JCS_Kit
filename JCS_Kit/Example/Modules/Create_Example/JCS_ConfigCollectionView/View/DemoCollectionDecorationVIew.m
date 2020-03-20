@@ -14,8 +14,9 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.alpha = 0.3;
-        self.jcs_randomBackgroundColor();
+        self.alpha = 0.5;
+        self.backgroundColor = JCS_COLOR_RGBA(0,0,0,0.5);
+//        self.jcs_randomBackgroundColor();
     }
     return self;
 }

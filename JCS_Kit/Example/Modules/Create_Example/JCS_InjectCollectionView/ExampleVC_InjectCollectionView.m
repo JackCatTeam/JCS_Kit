@@ -96,7 +96,7 @@
 - (void)jcs_request {
     
 //    self.forEachItems = @[@{},@{},@{},@{},@{}];
-    [self configForEachSections];
+//    [self configForEachSections];
     
     self.sections = [self jcs_generateCollectionViewSections];
     self.collectionView.jcs_customerSections(self.sections);
