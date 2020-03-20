@@ -120,6 +120,7 @@
 		7DA26903241B5E4C00C1653C /* Example_InjectTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268FD241B5E4B00C1653C /* Example_InjectTableView.m */; };
 		7DA26904241B5E4C00C1653C /* Example_InjectTableView.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 7DA268FF241B5E4B00C1653C /* Example_InjectTableView.geojson */; };
 		7DA26908241B5F3400C1653C /* ExampleVC_EmptyDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA26907241B5F3400C1653C /* ExampleVC_EmptyDemo.m */; };
+		7DFBE21324247F13002A87A0 /* TestRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFBE21224247F13002A87A0 /* TestRouter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -359,6 +360,8 @@
 		7DA268FF241B5E4B00C1653C /* Example_InjectTableView.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Example_InjectTableView.geojson; sourceTree = "<group>"; };
 		7DA26906241B5F3400C1653C /* ExampleVC_EmptyDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleVC_EmptyDemo.h; sourceTree = "<group>"; };
 		7DA26907241B5F3400C1653C /* ExampleVC_EmptyDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleVC_EmptyDemo.m; sourceTree = "<group>"; };
+		7DFBE21124247F13002A87A0 /* TestRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestRouter.h; sourceTree = "<group>"; };
+		7DFBE21224247F13002A87A0 /* TestRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestRouter.m; sourceTree = "<group>"; };
 		DCF346EA65B37144E17495F1 /* Pods-JCS_Kit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCS_Kit.debug.xcconfig"; path = "Target Support Files/Pods-JCS_Kit/Pods-JCS_Kit.debug.xcconfig"; sourceTree = "<group>"; };
 		E89503DEDD02D9B3D61F0037 /* Pods_JCS_Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCS_Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1163,6 +1166,8 @@
 			children = (
 				7DA268AE241B350300C1653C /* PersonRouter.h */,
 				7DA268AF241B350300C1653C /* PersonRouter.m */,
+				7DFBE21124247F13002A87A0 /* TestRouter.h */,
+				7DFBE21224247F13002A87A0 /* TestRouter.m */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -1567,6 +1572,7 @@
 				7DA2681E2419D32500C1653C /* JCS_EventBusAction.m in Sources */,
 				7D056E4A23EC0FD700E55653 /* SceneDelegate.m in Sources */,
 				7DA268F3241B3ADB00C1653C /* DemoCollectionDecorationVIew.m in Sources */,
+				7DFBE21324247F13002A87A0 /* TestRouter.m in Sources */,
 				7DA268B0241B350400C1653C /* PersonRouter.m in Sources */,
 				7DA268462419D32500C1653C /* JCS_CollectionViewModelHelper.m in Sources */,
 				7DA2688C241A4D3200C1653C /* EventBus_ExampleVC.m in Sources */,

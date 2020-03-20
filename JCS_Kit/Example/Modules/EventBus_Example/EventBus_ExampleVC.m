@@ -19,6 +19,12 @@
 
 - (void)jcs_setup {
     self.view.jcs_whiteBackgroundColor();
+    
+//    [self.eventBus addEventRouterMap:EVENT_ID router:@"jcs://TestRouter/hello:"];
+    [self.eventBus addEventRouterMapFromDictionary:@{
+        EVENT_ID:@"jcs://TestRouter/hello:"
+    }];
+    
     [self.eventBus registerAction:EVENT_ID executeBlock:^(id params){
         NSLog(@"post 1 params = %@",params);
     }];
