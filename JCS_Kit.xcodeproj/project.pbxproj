@@ -15,6 +15,8 @@
 		7D056E5223EC0FDA00E55653 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D056E5123EC0FDA00E55653 /* Assets.xcassets */; };
 		7D056E5523EC0FDA00E55653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D056E5323EC0FDA00E55653 /* LaunchScreen.storyboard */; };
 		7D056E5823EC0FDA00E55653 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D056E5723EC0FDA00E55653 /* main.m */; };
+		7D0AB4082429E79C006BA3A6 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0AB4072429E79C006BA3A6 /* Person.m */; };
+		7D0AB40A2429E9AD006BA3A6 /* Person.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 7D0AB4092429E986006BA3A6 /* Person.geojson */; };
 		7D636EBE2429D7DB0040CFE4 /* UIFont+JCS_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D636EBD2429D7DB0040CFE4 /* UIFont+JCS_Extension.m */; };
 		7DA2680B2419D32500C1653C /* NSDate+JCS_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2672F2419D32400C1653C /* NSDate+JCS_Extension.m */; };
 		7DA2680C2419D32500C1653C /* UIColor+JCS_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA267332419D32400C1653C /* UIColor+JCS_Extension.m */; };
@@ -139,6 +141,9 @@
 		7D056E5623EC0FDA00E55653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D056E5723EC0FDA00E55653 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7D056E5F23EC103500E55653 /* JCS_Kit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JCS_Kit.h; sourceTree = "<group>"; };
+		7D0AB4062429E79C006BA3A6 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		7D0AB4072429E79C006BA3A6 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		7D0AB4092429E986006BA3A6 /* Person.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Person.geojson; sourceTree = "<group>"; };
 		7D636EBC2429D7DB0040CFE4 /* UIFont+JCS_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+JCS_Extension.h"; sourceTree = "<group>"; };
 		7D636EBD2429D7DB0040CFE4 /* UIFont+JCS_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JCS_Extension.m"; sourceTree = "<group>"; };
 		7DA2672F2419D32400C1653C /* NSDate+JCS_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JCS_Extension.m"; sourceTree = "<group>"; };
@@ -1129,6 +1134,9 @@
 			children = (
 				7DA2688E241A4D4000C1653C /* Injection_ExampleVC.h */,
 				7DA2688F241A4D4000C1653C /* Injection_ExampleVC.m */,
+				7D0AB4062429E79C006BA3A6 /* Person.h */,
+				7D0AB4072429E79C006BA3A6 /* Person.m */,
+				7D0AB4092429E986006BA3A6 /* Person.geojson */,
 			);
 			path = Injection_Example;
 			sourceTree = "<group>";
@@ -1448,6 +1456,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D0AB40A2429E9AD006BA3A6 /* Person.geojson in Resources */,
 				7DA26904241B5E4C00C1653C /* Example_InjectTableView.geojson in Resources */,
 				7DA268A5241A511200C1653C /* ExampleListVC.geojson in Resources */,
 				7DA26902241B5E4C00C1653C /* ExampleVC_InjectCollectionView.geojson in Resources */,
@@ -1513,6 +1522,7 @@
 				7DA2680F2419D32500C1653C /* NSString+JCS_Extension.m in Sources */,
 				7DA268232419D32500C1653C /* UIViewController+JCS_Injection.m in Sources */,
 				7DA268112419D32500C1653C /* UIViewController+JCS_Extension.m in Sources */,
+				7D0AB4082429E79C006BA3A6 /* Person.m in Sources */,
 				7DA2681B2419D32500C1653C /* NSDictionary+JCS_Extension.m in Sources */,
 				7DA268522419D32500C1653C /* UIImageView+JCSCreate.m in Sources */,
 				7DA268362419D32500C1653C /* UITableViewHeaderFooterView+JCSCreate.m in Sources */,

@@ -11,8 +11,24 @@
     * [JCS_BaseLib](#JCS_BaseLib)
     * [JCS_Category](#JCS_Category)
     * [JCS_Injection](#JCS_Injection)
-    * [JCS_EventBus](#JCS_EventBus)
+        * [示例](#示例)
+        * [如何开启](#如何开启)
+        * [配置文件名称](#配置文件名称)
+        * [运行时注入](#运行时注入)
+        * [配置规则](#配置规则)
+            * [基本类型注入](#基本类型注入)
+            * [NSDictionary](#NSDictionary)
+            * [NSArray](#NSArray)
+            * [模型注入](#模型注入)
+            * [模型数组注入](#模型数组注入)
+        * [常量注入](#常量注入)
+        * [完整示例](#完整示例)
     * [JCS_Router](#JCS_Router)
+    * [JCS_EventBus](#JCS_EventBus)
+        * [示例](#示例)
+        * [事件响应注册](#事件响应注册)
+        * [事件触发](#事件触发)
+        * [路由表](#路由表)
     * [JCS_Create](#JCS_Create)
         * [UITableView(代码创建)](#UITableView代码创建)
         * [UICollectionView(代码创建)](#UICollectionView代码创建)
@@ -257,11 +273,469 @@ pod 'JCS_Kit'
 
 ## JCS_Injection
 
-JCS_Injection
+JCS_Injection能够根据文件配置对对象属性进行动态注入。
+
+该功能需要依赖MJExtension，在基础上进行hook实现，对MJExtension现有功能无侵入也无影响。
+
+以下对Person进行初始化赋值为例。
+
+### 示例
+
+通常我们会这样写
+
+```
+
+@interface Person()
+
+/** 姓名 **/
+@property (nonatomic, copy) NSString *name;
+/** 年龄 **/
+@property (nonatomic, assign) NSInteger age;
+/** 爱好 **/
+@property (nonatomic, strong) NSArray<NSString*> *likes;
+/** 其他信息 **/
+@property (nonatomic, strong) NSDictionary *profile;
+
+@end
+
+@implementation Person
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.name = @"张三";
+        self.age = 28;
+        self.likes = @[@"篮球",@"跑步",@"打架"];
+        self.profile = @{
+            @"blog":@"https://blogs.uvdog.com",
+            @"company":@"从不上班"
+        };
+    }
+    return self;
+}
+
+- (void)say {
+    NSLog(@"");
+}
+
+@end
+```
+
+使用JCS_Injection注入后代码是这样的
+
+数据文件 Person.geojson
+```
+{
+    "data": {
+        "name":"张三",
+        "age":30,
+        "likes":["骑车","游泳","跳伞"],
+        "profile":{
+            "blog":"https://blog.uvdog.com",
+            "company":"自由职业"
+        }
+    }
+}
+```
+
+Person.m
+```
+@interface Person()
+
+/** 姓名 **/
+@property (nonatomic, copy) NSString *name;
+/** 年龄 **/
+@property (nonatomic, assign) NSInteger age;
+/** 爱好 **/
+@property (nonatomic, strong) NSArray<NSString*> *likes;
+/** 其他信息 **/
+@property (nonatomic, strong) NSDictionary *profile;
+
+@end
+
+@implementation Person
+
+/// 开启注入功能
+- (BOOL)jcs_propertyInjectEnable {
+    return YES;
+}
+
+- (void)say {
+    //TODO: 这里可以断点查看注入情况
+}
+@end
+```
+
+乍一看这个功能好像没什么用，使用场景不很多。是的，日常开发这样的需求确实不多，但为了后面动态配置UITableView和UICollectionView，JCS_Injection还是有存在必要的。
+
+### 如何开启
+
+```
+/// 开启注入功能
+- (BOOL)jcs_propertyInjectEnable {
+    return YES;
+}
+```
+
+### 配置文件名称
+
+默认配置文件名为${classname}.geojson，也可以根据需要自己指定文件名。添加下面方法并返回指定文件名即可。
+
+```
+- (NSString *)jcs_propertyConfigFileName {
+    return @"customer-config-file.json";
+}
+```
+
+### 运行时注入
+
+JCS_Injection提供了下面三个运行时进行注入的方法。
+
+```
+/// 使用字典进行注入(字典格式必须符合配置文件格式)
+- (void)jcs_injectPropertiesWithDictionary:(NSDictionary*)dictionary;
+/// 使用JSON字符串进行注入(JSON格式必须符合配置文件格式)
+- (void)jcs_injectPropertiesWithJSONString:(NSString*)jsonString;
+/// 使用配置文件进行注入
+- (void)jcs_injectPropertiesWithConfigFile:(NSString*)configFileName;
+```
+
+### 配置规则
+
+1. **需要注入属性必须放在"data"属性下**
+2. **data下的属性名必须和对象中定义属性名一致，否则无法注入**
+3. 已支持基本类型、NSDictionary、NSArray、自定义模型、自定义模型数组
+
+#### 基本类型注入
+
+```
+{
+    "data":{
+      "count":50,
+      "name":"张三"
+    }
+}
+```
+
+#### NSDictionary 注入
+
+```
+{
+    "data":{
+          "profile":{
+              "username":"张三",
+              "age":18
+          }
+    }
+}
+```
+
+#### NSArray 注入
+
+```
+{
+    "data":{
+          "items":[{
+              "id":123,
+              "name":"cat"
+          },{
+              "id":321,
+              "name":"dog"
+          }]
+    }
+}
+```
+
+#### 模型注入
+
+模型注入有两种方式，属性定义和__class字段
+
+1.属性定义
+
+```
+//在属性定义时，指定具体类型为Person
+@property (nonatomic, strong) Person *person;
+
+//配置文件无需做修改
+{
+    "data":{
+          "person":{
+              "name":"peter",
+              "age":15,
+              "money":10000000
+          },
+    }
+}
+```
+
+2.__class字段
+
+```
+{
+    "data":{
+          "person":{
+              "__class":"Person",
+              "name":"peter",
+              "age":15,
+              "money":10000000
+          },
+    }
+}
+```
+
+#### 模型数组注入
+
+模型数组，只需在每个对象中添加__class指定类型即可
+
+```
+{
+    "data":{
+      "persons":[{
+          "__class":"Person",
+          "name":"aaaa",
+          "age":15,
+          "money":10000000
+      },{
+          "__class":"Person",
+          "name":"bbbb",
+          "age":16,
+          "money":10000001
+      }]
+  }
+}
+```
+
+### 常量注入
+
+配置文件data属性下的任何一个属性值中配置了常量表达式，在运行时都会动态进行解析并替换为实际数值。
+
+**表达式必须已"$"开头。**
+
+如存在下面配置
+```
+{
+    "data": {
+        "screenWidth":"$SCREEN_WIDTH",
+        "screenScale":"$SCREEN_WIDTH/$SCREEN_HEIGHT"
+    }
+}
+```
+
+JCS_Injection在注入之前会将上面配置根据实际屏幕尺寸进行替换为下面内容后再进行注入
+
+```
+{
+    "data": {
+        "screenWidth":"375",
+        "screenScale":"375/667"
+    }
+}
+```
+
+已支持常量
+
+|常量表达式|说明|
+|---|---|
+|SCREEN_WIDTH|屏幕宽度|
+|SCREEN_HEIGHT|屏幕高度|
+|SCREEN_SCALE|2倍、3倍|
+|STATUS_BAR_HEIGHT|状态栏高度iPhoneX系=44,其他20|
+|NAVIGATION_BAR_HEIGHT|导航栏高度iPhoneX系=88,其他64|
+|TAB_BAR_HEIGHT|Tab高度iPhoneX系=(49+34),其他49|
+|NAVIGATION_BAR_WITHOUTSTATUS_HEIGHT|导航栏不带statusbar,44|
+|HOME_INDICATOR_HEIGHT|Home指示剂iPhonex=34,其他=0|
+|iOS_VERSION|系统版本，如"11.4.1"|
+|APP_NAME|App名称，CFBundleDisplayName|
+|APP_VERSION|App版本，CFBundleShortVersionString|
+|BUILD_VERSION|AppBuild号，CFBundleVersion|
+|BUNDLE_ID|BundleId，CFBundleIdentifier|
+|DEVICE_TYPE|设备类型，[[UIDevice currentDevice] model]|
+|DEVICE_NAME|设备名称，如"JackCat's iPhone"|
+
+### 完整示例
+
+```
+{
+  "data":{
+      
+      "count":50,
+      "name":"属性注入",
+      
+      "data":{
+          "__class":"Person",
+          "name":"张三",
+          "age":18
+      },
+      
+      "items":[{
+          "id":123,
+          "name":"cat"
+      },{
+          "id":321,
+          "name":"dog"
+      }],
+      
+      "person1":{
+          "name":"aaaa",
+          "age":15,
+          "money":10000000,
+          "__width":10,
+          "likes":["唱歌","跳舞"],
+          "son":{
+              "name":"jack",
+              "age":5
+          }
+      },
+      
+      "person2":{
+          "__class":"Person",
+          "name":"aaaa",
+          "age":15,
+          "money":10000000,
+          "__width":10,
+          "likes":["唱歌","跳舞"],
+          "son":{
+              "name":"jack",
+              "age":5
+          }
+      },
+      
+      "persons":[{
+          "__class":"Person",
+          "name":"aaaa",
+          "age":15,
+          "money":10000000,
+          "likes":["唱歌","跳舞"],
+          "employees":[{
+              "__class":"Person",
+              "name":"张",
+              "likes":["唱歌","跳舞"],
+          },{
+              "__class":"Person",
+              "name":"李"
+          },{
+              "__class":"Person",
+              "name":"王"
+          }]
+      },{
+          "__class":"Person",
+          "name":"bbbb",
+          "age":16,
+          "money":10000001
+      },{
+          "__class":"Person",
+          "name":"cccc",
+          "age":17,
+          "money":10000002
+      }]
+  }
+}
+```
+
+## JCS_Router
 
 ## JCS_EventBus
 
-## JCS_Router
+JCS_EventBus为跨多层对象之间通讯而生。开发中有时会遇到下面的场景。
+
+* 一个UITableView，每一个Cell中都有个按钮，按钮点击事件需要统一管理。
+* 一个ViewController中的两个不相关的View和Button，两者跨层级较大，此时需要点击按钮时View的显示做出响应。
+
+通常我们解决这些文件可能最便捷的方法就是Notification了。
+
+JCS_EventBus为此提供了另一种方案。在ViewController中创建一个JCS_EventBus,每个子视图弱引用这个eventBus对象即可。
+
+### 示例
+
+```
+//事件ID
+#define EVENT_ID @"EVENT_ID"
+
+@interface EventBus_ExampleVC ()
+@property (nonatomic, strong) JCS_EventBus *eventBus;
+@end
+
+@implementation EventBus_ExampleVC
+
+- (void)jcs_setup {
+    //事件注册
+    [self.eventBus registerAction:EVENT_ID executeBlock:^(id params){
+        NSLog(@"post 1 params = %@",params);
+    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    //事件触发
+    [self.eventBus postEvent:EVENT_ID params:@{
+        @"goodsId":@"1o1o12i1i2"
+    }];
+}
+
+JCS_LAZY(JCS_EventBus, eventBus)
+
+@end
+```
+
+### 事件响应注册
+
+JCS_EventBus提供Block和Action两种注册方式。
+
+```
+//Block形式
+[self.eventBus registerAction:EVENT_ID executeBlock:^(id params){
+    NSLog(@"post 1 params = %@",params);
+}];
+
+//Action
+[self.eventBus registerAction:EVENT_ID target:self selector:@selector(eventHandler:)];
+
+//Action响应
+- (void)eventHandler:(id)params {
+    NSLog(@"post 3 params = %@",params);
+}
+```
+
+**若同一个EventId被注册多次，则所有注册的地方都将收到回调。**
+
+### 事件触发
+
+```
+[self.eventBus postEvent:EVENT_ID params:@{
+    @"goodsId":@"1o1o12i1i2"
+}];
+```
+
+### 路由表
+
+有些场景下点击会通过路由进行转发，会这样写
+
+```
+//跳转至登录界面
+[self.eventBus registerAction:@"showLoginVC" executeBlock:^(id params){
+    [JCS_RouterCenter router2Url:@"jcs://LoginVC" args:params completion:nil];
+}];
+
+//跳转至订单列表页
+[self.eventBus registerAction:@"showOrderListVC" executeBlock:^(id params){
+    [JCS_RouterCenter router2Url:@"jcs://OrderListVC" args:params completion:nil];
+}];
+
+......
+
+```
+
+这样会产生太多类似的转发代码。为了方便，JCS_EventBus提供了路由表来解决这问题。
+
+```
+[self.eventBus addEventRouterMapFromDictionary:@{
+    @"showLoginVC":@"jcs://LoginVC", //登录路由
+    @"showOrderListVC":@"jcs://OrderListVC" //跳转订单列表
+}];
+```
+
+只需addEventRouterMapFromDictionary即可省去上面一堆的转发代码。
+
+**若同一个EventId在路由表中已存在，则该EventId其他注册的地方将不再收到触发回调**
 
 ## JCS_Create
 
@@ -269,7 +743,6 @@ JCS_Injection
 ### UICollectionView(代码创建)
 ### UITableView(配置文件)
 ### UICollectionView(配置文件)
-### UICollectionView[配置文件]
 
 # Author
 

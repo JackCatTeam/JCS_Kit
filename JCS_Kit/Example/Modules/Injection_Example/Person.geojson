@@ -1,0 +1,13 @@
+{
+    "data": {
+        "name":"张三",
+        "age":30,
+        "likes":["骑车","游泳","跳伞"],
+        "profile":{
+            "blog":"https://blog.uvdog.com",
+            "company":"自由职业"
+        },
+        "deviceName":"$DEVICE_NAME",
+        "deviceType":"$DEVICE_TYPE",
+    }
+}
