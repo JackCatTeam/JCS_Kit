@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIColor (JCS_Extension)
 
 + (UIColor*)jcs_randomColor;
++ (UIColor*)jcs_colorWithHex:(NSInteger)hex alpha:(CGFloat)alpha;
++ (UIColor*)jcs_colorWithHexString:(NSString*)hex alpha:(CGFloat)alpha;
 
 @end
 

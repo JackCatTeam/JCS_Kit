@@ -8,6 +8,7 @@
 
 #import "UITextField+JCSCreate.h"
 #import "JCS_BaseLib.h"
+#import "JCS_Category.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
 @implementation UITextField (JCSCreate)

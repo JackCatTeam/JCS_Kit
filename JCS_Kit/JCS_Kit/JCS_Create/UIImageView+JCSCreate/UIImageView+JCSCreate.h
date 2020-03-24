@@ -15,5 +15,7 @@
 @property (nonatomic,copy,readonly) UIImageView*(^jcs_image)(UIImage *image);
 @property (nonatomic,copy,readonly) UIImageView*(^jcs_imageWithName)(NSString *imageName);
 @property (nonatomic,copy,readonly) UIImageView*(^jcs_imageWithUrlString)(NSString *url);
+@property (nonatomic,copy,readonly) UIImageView*(^jcs_imageWithUrlStringAndPlaceHolderImage)(NSString *url,NSString *placeholderImageName);
 @property (nonatomic,copy,readonly) UIImageView*(^jcs_imageWithUrl)(NSURL *url);
+@property (nonatomic,copy,readonly) UIImageView*(^jcs_imageWithUrlAndPlaceHolderImage)(NSURL *url,NSString *placeholderImageName);
 @end

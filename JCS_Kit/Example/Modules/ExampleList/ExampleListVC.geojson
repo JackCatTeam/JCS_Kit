@@ -89,7 +89,6 @@
             }
         }]
     },{
-        "hidden":true,
         "header":{
             "class":"ExampleSectionHeaderView",
             "data":"JCS_Category"
@@ -99,7 +98,8 @@
                 "__class":"ExampleListItem",
                 "title":"分类",
                 "jumpClass":"BaseLib_ExampleVC"
-            }
+            },
+            "clickRouter":"jcs://Category_ExampleVC"
         }]
     },{
         "header":{

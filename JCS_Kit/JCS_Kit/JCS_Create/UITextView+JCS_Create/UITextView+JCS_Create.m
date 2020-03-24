@@ -8,6 +8,7 @@
 
 #import "UITextView+JCS_Create.h"
 #import "JCS_BaseLib.h"
+#import "JCS_Category.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
 @implementation UITextView (JCS_Create)

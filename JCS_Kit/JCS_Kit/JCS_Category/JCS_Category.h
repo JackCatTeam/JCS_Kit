@@ -23,6 +23,7 @@
 #import "NSString+JCS_MathParser.h"
 #import "UIViewController+JCS_Extension.h"
 #import "NSData+JCS_Extension.h"
+#import "UIFont+JCS_Extension.h"
 
 #import "UIViewController+JCS_Swizzle.h"
 #import "UITableViewCell+JCS_Swizzle.h"

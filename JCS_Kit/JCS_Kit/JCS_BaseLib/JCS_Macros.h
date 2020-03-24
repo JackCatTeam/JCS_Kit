@@ -13,7 +13,11 @@
 
 #define JCS_COLOR_RGB(R, G, B) JCS_COLOR_RGBA(R, G, B,1)
 #define JCS_COLOR_RGBA(R, G, B, A) [UIColor colorWithRed:((R) / 255.0f) green:((G) / 255.0f) blue:((B) / 255.0f) alpha:A]
-#define JCS_COLOR_HEX(__HEX__) [UIColor colorWithRed:((float)((__HEX__ & 0xFF0000) >> 16))/255.0 green:((float)((__HEX__ & 0xFF00) >> 8))/255.0 blue:((float)(__HEX__ & 0xFF))/255.0 alpha:1.0]
+#define JCS_COLOR_HEXA(__HEX__,__ALPHA__) [UIColor jcs_colorWithHex:__HEX__ alpha:__ALPHA__]
+#define JCS_COLOR_HEX(__HEX__) JCS_COLOR_HEXA(__HEX__,1)
+#define JCS_COLOR_HEXA_String(__HEX__,__ALPHA__) [UIColor jcs_colorWithHexString:__HEX__ alpha:__ALPHA__]
+#define JCS_COLOR_HEX_String(__HEX__) JCS_COLOR_HEXA_String(__HEX__,1)
+
 
 #pragma mark - 屏幕
 

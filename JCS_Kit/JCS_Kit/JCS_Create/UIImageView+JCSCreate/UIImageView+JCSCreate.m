@@ -31,10 +31,22 @@
         return self;
     };
 }
+- (UIImageView *(^)(NSString *, NSString *))jcs_imageWithUrlStringAndPlaceHolderImage {
+    return ^id(NSString *url,NSString *placeholderImageName) {
+        [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:placeholderImageName]];
+        return self;
+    };
+}
 
 - (UIImageView *(^)(NSURL *url))jcs_imageWithUrl{
     return ^id(NSURL *url) {
         [self sd_setImageWithURL:url];
+        return self;
+    };
+}
+- (UIImageView *(^)(NSURL *, NSString *))jcs_imageWithUrlAndPlaceHolderImage {
+    return ^id(NSURL *url,NSString *placeholderImageName) {
+        [self sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:placeholderImageName]];
         return self;
     };
 }

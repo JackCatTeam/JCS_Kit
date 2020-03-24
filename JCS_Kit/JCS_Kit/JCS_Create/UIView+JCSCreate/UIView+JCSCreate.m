@@ -28,10 +28,10 @@ typedef void (^ClickBlock)(UIView*sender);
     return [[self alloc]initWithCoder:coder];
 }
 + (instancetype)jcs_createAndLayout:(id)superView frame:(CGRect)frame {
-    return ((UIView*)[self jcs_create]).jcs_layoutWithFrame(superView, frame);
+    return [super jcs_create].jcs_layoutWithFrame(superView, frame);
 }
 + (instancetype)jcs_createAndLayout:(id)superView constraintBlock:(void(^)(MASConstraintMaker *make))constraintBlock {
-    return ((UIView*)[self jcs_create]).jcs_layout(superView, constraintBlock);
+    return [super jcs_create].jcs_layout(superView, constraintBlock);
 }
 
 
@@ -286,6 +286,7 @@ typedef void (^ClickBlock)(UIView*sender);
 }
 
 - (void)configTabRecognizerWithTarget:(id)target selector:(SEL)selector{
+    self.userInteractionEnabled = YES;
     UITapGestureRecognizer *recoginzer = [[UITapGestureRecognizer alloc] initWithTarget:target action:selector];
     [self addGestureRecognizer:recoginzer];
     objc_setAssociatedObject(self, &associatedTapRecoginzerBKey, recoginzer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

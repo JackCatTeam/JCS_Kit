@@ -7,6 +7,7 @@
 //
 
 #import "Category_ExampleVC.h"
+#import "JCS_Kit.h"
 
 @interface Category_ExampleVC ()
 
@@ -16,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = JCS_COLOR_HEX_String(@"FF0000");
 }
 
 /*

@@ -15,6 +15,7 @@
 		7D056E5223EC0FDA00E55653 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D056E5123EC0FDA00E55653 /* Assets.xcassets */; };
 		7D056E5523EC0FDA00E55653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D056E5323EC0FDA00E55653 /* LaunchScreen.storyboard */; };
 		7D056E5823EC0FDA00E55653 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D056E5723EC0FDA00E55653 /* main.m */; };
+		7D636EBE2429D7DB0040CFE4 /* UIFont+JCS_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D636EBD2429D7DB0040CFE4 /* UIFont+JCS_Extension.m */; };
 		7DA2680B2419D32500C1653C /* NSDate+JCS_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2672F2419D32400C1653C /* NSDate+JCS_Extension.m */; };
 		7DA2680C2419D32500C1653C /* UIColor+JCS_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA267332419D32400C1653C /* UIColor+JCS_Extension.m */; };
 		7DA2680D2419D32500C1653C /* NSData+JCS_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA267362419D32400C1653C /* NSData+JCS_Extension.m */; };
@@ -138,6 +139,8 @@
 		7D056E5623EC0FDA00E55653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D056E5723EC0FDA00E55653 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7D056E5F23EC103500E55653 /* JCS_Kit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JCS_Kit.h; sourceTree = "<group>"; };
+		7D636EBC2429D7DB0040CFE4 /* UIFont+JCS_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+JCS_Extension.h"; sourceTree = "<group>"; };
+		7D636EBD2429D7DB0040CFE4 /* UIFont+JCS_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JCS_Extension.m"; sourceTree = "<group>"; };
 		7DA2672F2419D32400C1653C /* NSDate+JCS_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JCS_Extension.m"; sourceTree = "<group>"; };
 		7DA267302419D32400C1653C /* NSDate+JCS_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JCS_Extension.h"; sourceTree = "<group>"; };
 		7DA267322419D32400C1653C /* UIColor+JCS_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JCS_Extension.h"; sourceTree = "<group>"; };
@@ -428,6 +431,15 @@
 			path = JCS_Kit;
 			sourceTree = "<group>";
 		};
+		7D636EBB2429D7B90040CFE4 /* UIFont+JCS_Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7D636EBC2429D7DB0040CFE4 /* UIFont+JCS_Extension.h */,
+				7D636EBD2429D7DB0040CFE4 /* UIFont+JCS_Extension.m */,
+			);
+			path = "UIFont+JCS_Extension";
+			sourceTree = "<group>";
+		};
 		7DA2672D2419D32400C1653C /* JCS_Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +455,7 @@
 				7DA2675C2419D32400C1653C /* UITabBarController+JCS_Extension */,
 				7DA2675F2419D32400C1653C /* NSDictionary+JCS_Extension */,
 				7DA267652419D32400C1653C /* NSObject+JCS_Extension */,
+				7D636EBB2429D7B90040CFE4 /* UIFont+JCS_Extension */,
 			);
 			path = JCS_Category;
 			sourceTree = "<group>";
@@ -1507,6 +1520,7 @@
 				7DA268372419D32500C1653C /* UITableView+JCSCreate.m in Sources */,
 				7DA268312419D32500C1653C /* JCS_TableViewModel.m in Sources */,
 				7DA2681F2419D32500C1653C /* JCS_EventBus.m in Sources */,
+				7D636EBE2429D7DB0040CFE4 /* UIFont+JCS_Extension.m in Sources */,
 				7DA2689E241A4E1D00C1653C /* ExampleListItem.m in Sources */,
 				7DA2682D2419D32500C1653C /* UIButton+JCSCreate.m in Sources */,
 				7DA268BE241B383100C1653C /* ExampleTableSectionHeaderView.m in Sources */,

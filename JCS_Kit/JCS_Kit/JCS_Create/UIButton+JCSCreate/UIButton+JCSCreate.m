@@ -9,6 +9,7 @@
 #import "UIButton+JCSCreate.h"
 #import <objc/runtime.h>
 #import "JCS_BaseLib.h"
+#import "JCS_Category.h"
 
 static char topNameKey;
 static char rightNameKey;
