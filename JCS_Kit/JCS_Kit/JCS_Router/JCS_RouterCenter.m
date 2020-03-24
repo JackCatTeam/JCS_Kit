@@ -65,7 +65,7 @@
     
     //Class判空
     NSAssert1(className.jcs_isValid, @"路由错误: className %@ 为空 ", className);
-    if(className.jcs_isBlank) return nil;
+    if(!className.jcs_isValid) return nil;
     
     //Class
     Class clazz = NSClassFromString(className);
@@ -185,7 +185,7 @@
                                                                                   }];
     
     //不以“jcs://”未前缀，或者字符串就是“jcs://”，则不合法
-    if (routerURL.jcs_isBlank || ![routerURL hasPrefix:JCS_ROUTER_PREFIX] || [routerURL isEqualToString:JCS_ROUTER_PREFIX]) {
+    if (!routerURL.jcs_isValid || ![routerURL hasPrefix:JCS_ROUTER_PREFIX] || [routerURL isEqualToString:JCS_ROUTER_PREFIX]) {
         showError();
         return result;
     }
@@ -219,8 +219,8 @@
         //JCS_ROUTER_SEL_NAME
         if (comps.count > 1) {
             NSString *sel = comps[1];
-            if(sel.jcs_isBlank){ //验证sel是否合法
-                showError();
+            if(!sel.jcs_isValid){ //验证sel是否合法
+                [result setObject:@"setJcs_params:" forKey:JCS_ROUTER_SEL_NAME];
                 return result;
             }
             [result setObject:sel forKey:JCS_ROUTER_SEL_NAME];
@@ -249,7 +249,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSArray *components = [paramString componentsSeparatedByString:@"&"];
     for (NSString *tmpStr in components) {
-        if (tmpStr.jcs_isBlank) {
+        if (!tmpStr.jcs_isValid) {
             continue;
         }
         NSArray *tmpArray = [tmpStr componentsSeparatedByString:@"="];

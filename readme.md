@@ -24,6 +24,13 @@
         * [常量注入](#常量注入)
         * [完整示例](#完整示例)
     * [JCS_Router](#JCS_Router)
+        * [调用规则](#调用规则)
+        * [类方法](#类方法)
+        * [缺省方法](#缺省方法)
+        * [完成回调](#完成回调)
+        * [返回值](#返回值)
+        * [跳转UIViewController](#跳转UIViewController)
+        * [特殊路由](#特殊路由)
     * [JCS_EventBus](#JCS_EventBus)
         * [示例](#示例)
         * [事件响应注册](#事件响应注册)
@@ -633,6 +640,154 @@ JCS_Injection在注入之前会将上面配置根据实际屏幕尺寸进行替�
 ```
 
 ## JCS_Router
+
+路由可降低不同组件之间的解耦，但不影响组件之间的通讯。
+
+如存在路由
+
+```
+@interface TestRouter : NSObject
+@end
+
+@implementation TestRouter
+- (void)hello:(NSDictionary*)params {
+    NSLog(@"路由方法被调用， 参数 = %@",params);
+}
+@end
+```
+
+调用上面的路由
+
+```
+//路由地址
+[JCS_RouterCenter router2Url:@"jcs://TestRouter/hello:" args:@{@"name":@"张三"} completion:nil];
+//代码调动
+[JCS_RouterCenter router2ClassName:@"TestRouter" selName:@"hello:" args:@{@"name":@"张三"} completion:nil];
+```
+
+### 调用规则
+
+JCS_Router内部是通过TargetAction方式进行方法调用，调用时需要提供方法执行对象Target和方法名Action。
+
+路由地址字符串必须以协议"jcs://"开头(**下文的特殊路由除外**)，例如
+
+```
+jcs://TestRouter/hello:?params1=1&params2=2...
+```
+
+上面路由地址将被解析为调用```[TestRouter hello:]```方法，参数是```{@"params1":@"1",@"params2":@"2"}```
+
+### 类方法 vs 示例方法
+
+对于类方法调用还是实例方法调用，JCS_Router都是一样的调用方法。方法查找规则如下
+
+* 查找实例方法，找到则执行，反之
+* 查找类方法，找到则执行，反之
+* 报错
+
+例如，存在下面的路由，
+
+```
+@implementation TestRouter
+- (void)sayHello:(NSDictionary*)params {
+    NSLog(@"实例方法 sayHello");
+}
++ (void)sayHello:(NSDictionary*)params {
+    NSLog(@"类方法 sayHello");
+}
+@end
+```
+
+调用方法
+
+```
+[JCS_RouterCenter router2ClassName:@"TestRouter" selName:@"sayHello:" args:@{@"name":@"张三"} completion:nil];
+```
+
+因为存在实例方法``` sayHello: ```,所以会打印出``` 实例方法 sayHello ```。
+若将实例方法注释掉，则会打印出``` 类方法 sayHello ```。
+
+### 缺省方法
+
+调用路由时若为给出Selector,则默认会执行@selector(setJcs_params:)方法。在他方法需要获取参数直接调用self.jcs_params即可。
+
+### 完成回调
+
+调用路由时提供了一个completion参数，类型为Block，可选。
+
+```
+void(^)(NSError *error, id response)
+```
+
+若传递了该参数，在路由方法中通过下面方法获取该block对象
+```
+void(^completion)(NSError*error,NSDictionary*response) = [params valueForKey:JCS_ROUTER_COMPLETION];
+```
+
+执行完成回调时，调用方的completion将收到回调
+
+```
+if(completion){
+    completion(nil,@{@"success":@YES})
+}
+```
+
+### 返回值
+
+JCS_Router支持同步返回
+
+```
+@implementation TestRouter
+- (NSString*)getMessage{
+    return @"你好 Message";
+}
+@end
+```
+
+调用方法
+
+```
+NSString *message = [JCS_RouterCenter router2ClassName:@"TestRouter" selName:@"getMessage" args:nil completion:nil];
+```
+
+### 跳转UIViewController
+
+方法一
+
+```
+//定义
+@implementation TestRouter
+- (void)showOrderListVC:(NSDictionary*)params {
+    OrderListVC *vc = [[OrderListVC alloc] init];
+    vc.jcs_params = params;
+    [self.jcs_currentVC jcs_pushVC:vc animated:YES];
+}
+@end
+
+//调用
+[JCS_RouterCenter router2ClassName:@"TestRouter" selName:@"showOrderListVC:" args:@{@"status":@1} completion:nil];
+```
+
+方法二
+
+```
+//该方法无需定义路由，直接传入ViewController名称即可。
+[JCS_RouterCenter router2Url:@"jcs://OrderListVC" args:@{@"status":@1} completion:nil];
+
+在ViewController中的jcs_params:方法中获取传入参数。
+也可以在setJcs_params:方法中自行接收参数
+```
+
+**重写setJcs_params:方法时，必须调用[super setJcs_params:]方法，否则将无法通过self.jcs_params属性获取数据**
+
+### 特殊路由
+
+JCS_Router内部已经实现了几个特殊路由，无需再为其定义路由即可使用。
+
+|路由|说明|
+|---|---|
+|sms://10086&&body=123|进行系统短信发送页面|
+|telprompt://4008887381|拨打电话4008887381|
 
 ## JCS_EventBus
 

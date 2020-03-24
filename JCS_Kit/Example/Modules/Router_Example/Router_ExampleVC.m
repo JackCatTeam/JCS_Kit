@@ -26,9 +26,12 @@
 //    NSString *router = @"sms://10086&&body=123";
         NSString *router = @"telprompt://4008887381";
     
-    id result = [JCS_RouterCenter router2Url:router args:@{@"c":@"3"} completion:^(NSError * _Nullable error, id  _Nullable response) {
-        NSLog(@"completion = %@",response);
-    }];
+//    id result = [JCS_RouterCenter router2Url:router args:@{@"c":@"3"} completion:^(NSError * _Nullable error, id  _Nullable response) {
+//        NSLog(@"completion = %@",response);
+//    }];
+    
+    [JCS_RouterCenter router2Url:@"jcs://TestRouter/" args:@{@"name":@"张三"} completion:nil];
+    [JCS_RouterCenter router2ClassName:@"TestRouter" selName:@"hello:" args:@{@"name":@"张三"} completion:nil];
     
     NSLog(@"");
     
