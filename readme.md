@@ -14,10 +14,10 @@
     * [JCS_EventBus](#JCS_EventBus)
     * [JCS_Router](#JCS_Router)
     * [JCS_Create](#JCS_Create)
-        * [UITableView(代码创建)](#UITableView(代码创建))
-        * [UICollectionView(代码创建)](#UICollectionView(代码创建))
-        * [UITableView(配置文件)](#UITableView(配置文件))
-        * [UICollectionView(配置文件)](#UICollectionView(配置文件))
+        * [UITableView(代码创建)](#UITableView代码创建)
+        * [UICollectionView(代码创建)](#UICollectionView代码创建)
+        * [UITableView(配置文件)](#UITableView配置文件)
+        * [UICollectionView(配置文件)](#UICollectionView配置文件)
 * [Author](#Author)
 
 ## 介绍
