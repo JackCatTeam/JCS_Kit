@@ -263,6 +263,8 @@ source 'https://gitee.com/devjackcat/JCS_PodSpecs.git'
 
 //导入
 pod 'JCS_Kit'
+
+#import <JCS_Kit/JCS_Kit.h>
 ```
 
 ## JCS_BaseLib
