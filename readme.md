@@ -269,6 +269,7 @@ JCS_Injection
 ### UICollectionView(代码创建)
 ### UITableView(配置文件)
 ### UICollectionView(配置文件)
+### UICollectionView[配置文件]
 
 # Author
 
