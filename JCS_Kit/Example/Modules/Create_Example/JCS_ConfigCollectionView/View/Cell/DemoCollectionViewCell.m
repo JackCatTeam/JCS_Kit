@@ -52,8 +52,10 @@
     } else {
         self.titleLabel.jcs_fontSize(17);
     }
-    JCS_EventBus *eventBus = self.jcs_eventBus;
-    [eventBus postEvent:@"CellClick" params:@{@"title":self.titleLabel.text}];
+    if(self.titleLabel.text.jcs_isValid){
+        JCS_EventBus *eventBus = self.jcs_eventBus;
+        [eventBus postEvent:@"CellClick" params:@{@"title":self.titleLabel.text}];
+    }
 }
 
 - (void)dealloc {

@@ -31,11 +31,11 @@
 @implementation ExampleVC_InjectCollectionView
 
 - (BOOL)jcs_propertyInjectEnable {
-    return YES;
+    return NO;
 }
 
 - (NSString*)jcs_propertyConfigFileName {
-    return @"ExampleVC_InjectCollectionView.geojson";
+    return @"ExampleVC_InjectCollectionView3.geojson";
 }
 
 - (void)jcs_setup {
@@ -46,51 +46,52 @@
     
     [UICollectionView jcs_createWithWaterFallLayout:nil].jcs_layout(self.view, ^(MASConstraintMaker *make) {
         make.left.top.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(-100);
+//        make.bottom.mas_equalTo(-100);
+        make.bottom.mas_equalTo(0);
     }).jcs_toCollectionView()
     .jcs_customerSections(self.sections)
     .jcs_associated(&_collectionView);
     
     @weakify(self)
     
-    [UIButton jcs_create].jcs_layout(self.view, ^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(16);
-        make.bottom.mas_equalTo(-JCS_HOME_INDICATOR_HEIGHT);
-        make.height.mas_equalTo(44);
-        make.width.mas_equalTo((JCS_SCREEN_WIDTH - 16 * 3)/2);
-    }).jcs_toButton()
-    .jcs_normalTitle(@"Add to One")
-    .jcs_clickBlock(^(UIButton *sender) {
-        @strongify(self)
-        
-        self.headerData1 = @"ref headerData update";
-        
-        JCS_CollectionViewItemModel *itemModel = [JCS_CollectionViewItemModel jcs_create];
-        itemModel.cellClass = @"DemoCollectionViewCell";
-        itemModel.cellSize = CGSizeMake(80, 80);
-        itemModel.data = [NSString stringWithFormat:@"%d",arc4random_uniform(300)];
-        [self.sectionItems1 addObject:itemModel];
-        self.collectionView.jcs_customerSections(self.sections);
-    })
-    .jcs_normalTitleColor(UIColor.blackColor);
-    
-    [UIButton jcs_create].jcs_layout(self.view, ^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(-16);
-        make.bottom.mas_equalTo(-JCS_HOME_INDICATOR_HEIGHT);
-        make.height.mas_equalTo(44);
-        make.width.mas_equalTo((JCS_SCREEN_WIDTH - 16 * 3)/2);
-    }).jcs_toButton()
-    .jcs_normalTitle(@"Add to Two")
-    .jcs_clickBlock(^(UIButton *sender) {
-        @strongify(self)
-        JCS_CollectionViewItemModel *itemModel = [JCS_CollectionViewItemModel jcs_create];
-        itemModel.cellClass = @"DemoCollectionViewCell";
-        itemModel.cellSize = CGSizeMake(80, 80);
-        itemModel.data = [NSString stringWithFormat:@"%d",arc4random_uniform(300)];
-        [self.sectionItems2 addObject:itemModel];
-        self.collectionView.jcs_customerSections(self.sections);
-    })
-    .jcs_normalTitleColor(UIColor.blackColor);
+//    [UIButton jcs_create].jcs_layout(self.view, ^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(16);
+//        make.bottom.mas_equalTo(-JCS_HOME_INDICATOR_HEIGHT);
+//        make.height.mas_equalTo(44);
+//        make.width.mas_equalTo((JCS_SCREEN_WIDTH - 16 * 3)/2);
+//    }).jcs_toButton()
+//    .jcs_normalTitle(@"Add to One")
+//    .jcs_clickBlock(^(UIButton *sender) {
+//        @strongify(self)
+//
+//        self.headerData1 = @"ref headerData update";
+//
+//        JCS_CollectionViewItemModel *itemModel = [JCS_CollectionViewItemModel jcs_create];
+//        itemModel.cellClass = @"DemoCollectionViewCell";
+//        itemModel.cellSize = CGSizeMake(80, 80);
+//        itemModel.data = [NSString stringWithFormat:@"%d",arc4random_uniform(300)];
+//        [self.sectionItems1 addObject:itemModel];
+//        self.collectionView.jcs_customerSections(self.sections);
+//    })
+//    .jcs_normalTitleColor(UIColor.blackColor);
+//
+//    [UIButton jcs_create].jcs_layout(self.view, ^(MASConstraintMaker *make) {
+//        make.right.mas_equalTo(-16);
+//        make.bottom.mas_equalTo(-JCS_HOME_INDICATOR_HEIGHT);
+//        make.height.mas_equalTo(44);
+//        make.width.mas_equalTo((JCS_SCREEN_WIDTH - 16 * 3)/2);
+//    }).jcs_toButton()
+//    .jcs_normalTitle(@"Add to Two")
+//    .jcs_clickBlock(^(UIButton *sender) {
+//        @strongify(self)
+//        JCS_CollectionViewItemModel *itemModel = [JCS_CollectionViewItemModel jcs_create];
+//        itemModel.cellClass = @"DemoCollectionViewCell";
+//        itemModel.cellSize = CGSizeMake(80, 80);
+//        itemModel.data = [NSString stringWithFormat:@"%d",arc4random_uniform(300)];
+//        [self.sectionItems2 addObject:itemModel];
+//        self.collectionView.jcs_customerSections(self.sections);
+//    })
+//    .jcs_normalTitleColor(UIColor.blackColor);
 }
 
 - (void)jcs_request {
