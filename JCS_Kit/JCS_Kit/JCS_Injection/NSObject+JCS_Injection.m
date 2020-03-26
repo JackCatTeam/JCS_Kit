@@ -217,10 +217,6 @@ const char jcsInjectConfigKey;
             if (allowedPropertyNames.count && ![allowedPropertyNames containsObject:property.name]) return;
             if ([ignoredPropertyNames containsObject:property.name]) return;
             
-            if([property.name isEqualToString:@"refundRule"]){
-                NSLog(@"");
-            }
-            
             // 1.取出属性值
             id value;
             NSArray *propertyKeyses = [property propertyKeysForClass:clazz];
