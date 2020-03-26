@@ -58,33 +58,35 @@
     };
 }
 
-- (UIScrollView *(^)(void))jcs_contentInsetAdjustmentBehavior_Automatic  API_AVAILABLE(ios(11.0)){
+- (UIScrollView *(^)(void))jcs_contentInsetAdjustmentBehavior_Automatic API_AVAILABLE(ios(11.0)){
     return ^id{
-        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+        self.jcs_contentInsetAdjustmentBehavior(UIScrollViewContentInsetAdjustmentAutomatic);
         return self;
     };
 }
 - (UIScrollView *(^)(void))jcs_contentInsetAdjustmentBehavior_ScrollableAxes  API_AVAILABLE(ios(11.0)){
     return ^id{
-        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentScrollableAxes;
+        self.jcs_contentInsetAdjustmentBehavior(UIScrollViewContentInsetAdjustmentScrollableAxes);
         return self;
     };
 }
 - (UIScrollView *(^)(void))jcs_contentInsetAdjustmentBehavior_Never  API_AVAILABLE(ios(11.0)){
     return ^id{
-        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.jcs_contentInsetAdjustmentBehavior(UIScrollViewContentInsetAdjustmentNever);
         return self;
     };
 }
 - (UIScrollView *(^)(void))jcs_contentInsetAdjustmentBehavior_Always  API_AVAILABLE(ios(11.0)){
     return ^id{
-        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
+        self.jcs_contentInsetAdjustmentBehavior(UIScrollViewContentInsetAdjustmentAlways);
         return self;
     };
 }
-- (UIScrollView *(^)(UIScrollViewContentInsetAdjustmentBehavior behavior))jcs_contentInsetAdjustmentBehavior  API_AVAILABLE(ios(11.0)){
-    return ^id(UIScrollViewContentInsetAdjustmentBehavior behavior) {
-        self.contentInsetAdjustmentBehavior = behavior;
+- (UIScrollView *(^)(UIScrollViewContentInsetAdjustmentBehavior behavior))jcs_contentInsetAdjustmentBehavior API_AVAILABLE(ios(11.0)){
+    return ^id(UIScrollViewContentInsetAdjustmentBehavior behavior){
+        if (@available(iOS 11.0, *)) {
+            self.contentInsetAdjustmentBehavior = behavior;
+        }
         return self;
     };
 }

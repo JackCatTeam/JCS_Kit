@@ -24,6 +24,6 @@
 - (UIScrollView *(^)(void))jcs_contentInsetAdjustmentBehavior_ScrollableAxes;
 - (UIScrollView *(^)(void))jcs_contentInsetAdjustmentBehavior_Never;
 - (UIScrollView *(^)(void))jcs_contentInsetAdjustmentBehavior_Always;
-- (UIScrollView *(^)(UIScrollViewContentInsetAdjustmentBehavior behavior))jcs_contentInsetAdjustmentBehavior  API_AVAILABLE(ios(11.0));
+- (UIScrollView *(^)(UIScrollViewContentInsetAdjustmentBehavior behavior))jcs_contentInsetAdjustmentBehavior ;
 
 @end
