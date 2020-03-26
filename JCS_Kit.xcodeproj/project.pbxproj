@@ -17,6 +17,8 @@
 		7D056E5823EC0FDA00E55653 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D056E5723EC0FDA00E55653 /* main.m */; };
 		7D0AB4082429E79C006BA3A6 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0AB4072429E79C006BA3A6 /* Person.m */; };
 		7D0AB40A2429E9AD006BA3A6 /* Person.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 7D0AB4092429E986006BA3A6 /* Person.geojson */; };
+		7D4CFC49242CFD980045BBB8 /* JCSOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CFC48242CFD980045BBB8 /* JCSOrderModel.m */; };
+		7D4CFC4C242CFE0E0045BBB8 /* JCSGTOrderMedaDateTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CFC4B242CFE0E0045BBB8 /* JCSGTOrderMedaDateTicket.m */; };
 		7D636EBE2429D7DB0040CFE4 /* UIFont+JCS_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D636EBD2429D7DB0040CFE4 /* UIFont+JCS_Extension.m */; };
 		7DA2680B2419D32500C1653C /* NSDate+JCS_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2672F2419D32400C1653C /* NSDate+JCS_Extension.m */; };
 		7DA2680C2419D32500C1653C /* UIColor+JCS_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA267332419D32400C1653C /* UIColor+JCS_Extension.m */; };
@@ -148,6 +150,10 @@
 		7D0AB4062429E79C006BA3A6 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		7D0AB4072429E79C006BA3A6 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		7D0AB4092429E986006BA3A6 /* Person.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Person.geojson; sourceTree = "<group>"; };
+		7D4CFC47242CFD980045BBB8 /* JCSOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JCSOrderModel.h; sourceTree = "<group>"; };
+		7D4CFC48242CFD980045BBB8 /* JCSOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JCSOrderModel.m; sourceTree = "<group>"; };
+		7D4CFC4A242CFE0E0045BBB8 /* JCSGTOrderMedaDateTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JCSGTOrderMedaDateTicket.h; sourceTree = "<group>"; };
+		7D4CFC4B242CFE0E0045BBB8 /* JCSGTOrderMedaDateTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JCSGTOrderMedaDateTicket.m; sourceTree = "<group>"; };
 		7D636EBC2429D7DB0040CFE4 /* UIFont+JCS_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+JCS_Extension.h"; sourceTree = "<group>"; };
 		7D636EBD2429D7DB0040CFE4 /* UIFont+JCS_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JCS_Extension.m"; sourceTree = "<group>"; };
 		7DA2672F2419D32400C1653C /* NSDate+JCS_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JCS_Extension.m"; sourceTree = "<group>"; };
@@ -1147,10 +1153,14 @@
 				7D0AB4062429E79C006BA3A6 /* Person.h */,
 				7D0AB4072429E79C006BA3A6 /* Person.m */,
 				7DA268FE242CB01B00495C45 /* testjson.geojson */,
+				7D4CFC47242CFD980045BBB8 /* JCSOrderModel.h */,
+				7D4CFC48242CFD980045BBB8 /* JCSOrderModel.m */,
 				7DA268F8242CAF6500495C45 /* HKGTOrderModel.h */,
 				7DA268F9242CAF6500495C45 /* HKGTOrderModel.m */,
 				7DA268FB242CAF8300495C45 /* HKGTOrderMedaDateTicket.h */,
 				7DA268FC242CAF8300495C45 /* HKGTOrderMedaDateTicket.m */,
+				7D4CFC4A242CFE0E0045BBB8 /* JCSGTOrderMedaDateTicket.h */,
+				7D4CFC4B242CFE0E0045BBB8 /* JCSGTOrderMedaDateTicket.m */,
 				7D0AB4092429E986006BA3A6 /* Person.geojson */,
 			);
 			path = Injection_Example;
@@ -1539,6 +1549,7 @@
 				7DA268F4241B3ADB00C1653C /* DemoCollectionSectionHeaderView.m in Sources */,
 				7DA2680F2419D32500C1653C /* NSString+JCS_Extension.m in Sources */,
 				7DA268232419D32500C1653C /* UIViewController+JCS_Injection.m in Sources */,
+				7D4CFC49242CFD980045BBB8 /* JCSOrderModel.m in Sources */,
 				7DA268112419D32500C1653C /* UIViewController+JCS_Extension.m in Sources */,
 				7D0AB4082429E79C006BA3A6 /* Person.m in Sources */,
 				7DA2681B2419D32500C1653C /* NSDictionary+JCS_Extension.m in Sources */,
@@ -1586,6 +1597,7 @@
 				7DA268212419D32500C1653C /* NSDictionary+JCS_Injection.m in Sources */,
 				7DA268F5241B3ADB00C1653C /* DemoCollectionViewCell.m in Sources */,
 				7D056E5823EC0FDA00E55653 /* main.m in Sources */,
+				7D4CFC4C242CFE0E0045BBB8 /* JCSGTOrderMedaDateTicket.m in Sources */,
 				7DA2682B2419D32500C1653C /* UIView+JCSCreate.m in Sources */,
 				7DA2684F2419D32500C1653C /* UILabel+JCSCreate.m in Sources */,
 				7DA2684C2419D32500C1653C /* UICollectionViewFlowLayout+JCSCreate.m in Sources */,
