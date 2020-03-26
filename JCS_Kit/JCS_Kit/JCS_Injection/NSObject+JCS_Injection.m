@@ -70,7 +70,25 @@ const char jcsInjectConfigKey;
 - (void)jcs_injectProperties {
     [self jcs_injectPropertiesWithConfigFile:[self jcs_propertyConfigFileName]];
 }
-/// 使用字典进行注入
+/// 使用字典进行注入，字典内直接是属性内容，无需放在data属性中， 格式如下
+/// {
+///     "username":"",
+///     "profile":""
+/// }
+- (void)jcs_injectPropertiesWithPureDictionary:(NSDictionary*)dictionary {
+    //对data先注入（这里是常量和变量的注入）
+    NSDictionary *dataConfig = [NSDictionary jcs_injectParams:dictionary data:self];
+    //开始赋值
+    [self mj_setKeyValues:dataConfig];
+    
+}
+/// 使用字典进行注入, 需要注入的属性需要放在data属性下， 格式如下
+/// {
+///     "data":{
+///         ...
+///         ...
+///     }
+/// }
 - (void)jcs_injectPropertiesWithDictionary:(NSDictionary*)dictionary {
     if(!dictionary){
         JCS_LogError(@"%@ 注入失败 dictionary 为空",NSStringFromClass(self.class));
@@ -87,15 +105,13 @@ const char jcsInjectConfigKey;
     //DATA配置
     NSDictionary *dataConfig = [dictionary valueForKey:JCS_CONFIG_DATA_KEY];
     if(!(dataConfig && [dataConfig isKindOfClass:NSDictionary.class])){
-        //如果没有data，则直接全量注入
+        //如果没有data，则直接全量注入（这里是常量和变量的注入）
         self.jcs_configInfo = [NSDictionary jcs_injectParams:dictionary data:self];
         return;
     }
     
-    //对data先注入
-    dataConfig = [NSDictionary jcs_injectParams:dataConfig data:self];
-    //开始赋值
-    [self mj_setKeyValues:dataConfig];
+    //对数据进行注入
+    [self jcs_injectPropertiesWithPureDictionary:dataConfig];
     
     //再对除data之外的进行注入
     NSMutableDictionary *configInfo = [NSMutableDictionary dictionaryWithDictionary:dictionary];
@@ -104,7 +120,32 @@ const char jcsInjectConfigKey;
     configInfo[JCS_CONFIG_DATA_KEY] = dataConfig;
     self.jcs_configInfo = configInfo;
 }
-/// 使用JSON字符串进行注入
+/// 使用JSON字符串进行注入，json内直接是属性内容，无需放在data属性中， 格式如下
+/// {
+///     "username":"",
+///     "profile":""
+/// }
+- (void)jcs_injectPropertiesWithPureJSONString:(NSString*)jsonString {
+    if(!jsonString.jcs_isValid){
+        JCS_LogError(@"%@ 注入失败 jsonString 为空",NSStringFromClass(self.class));
+        return;
+    }
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingFragmentsAllowed) error:&error];
+    if(error){
+        JCS_LogError(@"%@ 注入失败 jsonString 不是合法的JSON",NSStringFromClass(self.class));
+        return;
+    }
+    [self jcs_injectPropertiesWithPureDictionary:jsonDict];
+}
+/// 使用JSON字符串进行注入, 需要注入的属性需要放在data属性下， 格式如下
+/// {
+///     "data":{
+///         ...
+///         ...
+///     }
+/// }
 - (void)jcs_injectPropertiesWithJSONString:(NSString*)jsonString {
     if(!jsonString.jcs_isValid){
         JCS_LogError(@"%@ 注入失败 jsonString 为空",NSStringFromClass(self.class));

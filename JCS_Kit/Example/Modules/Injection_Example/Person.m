@@ -8,6 +8,7 @@
 
 #import "Person.h"
 #import "JCS_Kit.h"
+#import <MJExtension/MJExtension.h>
 
 @interface Person()
 
@@ -28,17 +29,17 @@
 @implementation Person
 
 /// 开启注入功能
-- (BOOL)jcs_propertyInjectEnable {
-    return YES;
-}
+//- (BOOL)jcs_propertyInjectEnable {
+//    return YES;
+//}
 
-- (NSString *)jcs_propertyConfigFileName {
-    return @"customer-config-file.json";
-}
+//- (NSString *)jcs_propertyConfigFileName {
+//    return @"customer-config-file.json";
+//}
 
-//- (instancetype)init {
-//    self = [super init];
-//    if (self) {
+- (instancetype)init {
+    self = [super init];
+    if (self) {
 //        self.name = @"张三";
 //        self.age = 28;
 //        self.likes = @[@"篮球",@"跑步",@"打架"];
@@ -46,9 +47,37 @@
 //            @"blog":@"https://blogs.uvdog.com",
 //            @"company":@"从不上班"
 //        };
-//    }
-//    return self;
-//}
+        
+//        [self jcs_injectPropertiesWithPureDictionary:@{
+//            @"deviceName":@"$DEVICE_NAME"
+//        }];
+//
+//        [self jcs_injectPropertiesWithDictionary:@{
+//            @"data":@{
+//                @"deviceType":@"$DEVICE_TYPE"
+//            }
+//        }];
+        
+//        {
+//            [self jcs_injectPropertiesWithPureJSONString:@{
+//                @"deviceName":@"$DEVICE_NAME",
+//                @"deviceType":@"$DEVICE_TYPE"
+//            }.mj_JSONString];
+//        }
+        
+        {
+            [self jcs_injectPropertiesWithJSONString:@{
+                @"data":@{
+                    @"deviceName":@"$DEVICE_NAME",
+                    @"deviceType":@"$DEVICE_TYPE"
+                }
+            }.mj_JSONString];
+        }
+        
+        NSLog(@"");
+    }
+    return self;
+}
 
 - (void)say {
     NSLog(@"");
