@@ -18,12 +18,7 @@
         return paramsArray;
     }
     
-    NSMutableArray *mutableArray = nil;
-    if([mutableArray isKindOfClass:NSMutableArray.class]){
-        mutableArray = (NSMutableArray*)paramsArray;
-    } else {
-        mutableArray = [NSMutableArray arrayWithArray:paramsArray];
-    }
+    NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:paramsArray];
     
     for (NSInteger index = 0; index < mutableArray.count; index++) {
         id value = mutableArray[index];

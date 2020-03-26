@@ -247,6 +247,9 @@
 
 + (NSDictionary *)generateParamsString:(NSString *)paramString {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    if(!paramString.jcs_isValid){
+        return params;
+    }
     NSArray *components = [paramString componentsSeparatedByString:@"&"];
     for (NSString *tmpStr in components) {
         if (!tmpStr.jcs_isValid) {

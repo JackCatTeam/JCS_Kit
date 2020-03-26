@@ -17,19 +17,11 @@
     if(!(data && [paramsDictionary isKindOfClass:NSDictionary.class])){
         return [NSMutableDictionary dictionaryWithDictionary:paramsDictionary];
     }
-    NSMutableDictionary *mutableDictionary = nil;
-    if([paramsDictionary isKindOfClass:NSMutableDictionary.class]){
-        mutableDictionary = (NSMutableDictionary*)paramsDictionary;
-    } else {
-        mutableDictionary = [NSMutableDictionary dictionaryWithDictionary:paramsDictionary];
-    }
+    NSMutableDictionary *mutableDictionary = [NSMutableDictionary dictionaryWithDictionary:paramsDictionary];
     
     for (NSString *key in mutableDictionary.allKeys) {
         id value = mutableDictionary[key];
         id newValue = value;
-        if([key isEqualToString:@"items"]){
-            NSLog(@"");
-        }
         if([value isKindOfClass:NSDictionary.class]){  //NSDictionary，递归参数注入替换
             newValue = [NSDictionary jcs_injectParams:value data:data];
             
