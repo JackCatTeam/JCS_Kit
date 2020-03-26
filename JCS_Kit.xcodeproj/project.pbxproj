@@ -117,6 +117,9 @@
 		7DA268F4241B3ADB00C1653C /* DemoCollectionSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268E4241B3ADB00C1653C /* DemoCollectionSectionHeaderView.m */; };
 		7DA268F5241B3ADB00C1653C /* DemoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268E7241B3ADB00C1653C /* DemoCollectionViewCell.m */; };
 		7DA268F6241B3ADB00C1653C /* DemoCollectionSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268EA241B3ADB00C1653C /* DemoCollectionSectionFooterView.m */; };
+		7DA268FA242CAF6500495C45 /* HKGTOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268F9242CAF6500495C45 /* HKGTOrderModel.m */; };
+		7DA268FD242CAF8300495C45 /* HKGTOrderMedaDateTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268FC242CAF8300495C45 /* HKGTOrderMedaDateTicket.m */; };
+		7DA268FF242CB07200495C45 /* testjson.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 7DA268FE242CB01B00495C45 /* testjson.geojson */; };
 		7DA26900241B5E4B00C1653C /* ExampleVC_InjectCollectionView2.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 7DA268F8241B5E4B00C1653C /* ExampleVC_InjectCollectionView2.geojson */; };
 		7DA26901241B5E4C00C1653C /* ExampleVC_InjectCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA268F9241B5E4B00C1653C /* ExampleVC_InjectCollectionView.m */; };
 		7DA26902241B5E4C00C1653C /* ExampleVC_InjectCollectionView.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 7DA268FA241B5E4B00C1653C /* ExampleVC_InjectCollectionView.geojson */; };
@@ -361,11 +364,16 @@
 		7DA268EA241B3ADB00C1653C /* DemoCollectionSectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCollectionSectionFooterView.m; sourceTree = "<group>"; };
 		7DA268EB241B3ADB00C1653C /* DemoCollectionSectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCollectionSectionFooterView.h; sourceTree = "<group>"; };
 		7DA268F8241B5E4B00C1653C /* ExampleVC_InjectCollectionView2.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ExampleVC_InjectCollectionView2.geojson; sourceTree = "<group>"; };
+		7DA268F8242CAF6500495C45 /* HKGTOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKGTOrderModel.h; sourceTree = "<group>"; };
 		7DA268F9241B5E4B00C1653C /* ExampleVC_InjectCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleVC_InjectCollectionView.m; sourceTree = "<group>"; };
+		7DA268F9242CAF6500495C45 /* HKGTOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HKGTOrderModel.m; sourceTree = "<group>"; };
 		7DA268FA241B5E4B00C1653C /* ExampleVC_InjectCollectionView.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ExampleVC_InjectCollectionView.geojson; sourceTree = "<group>"; };
 		7DA268FB241B5E4B00C1653C /* ExampleVC_InjectCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleVC_InjectCollectionView.h; sourceTree = "<group>"; };
+		7DA268FB242CAF8300495C45 /* HKGTOrderMedaDateTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKGTOrderMedaDateTicket.h; sourceTree = "<group>"; };
+		7DA268FC242CAF8300495C45 /* HKGTOrderMedaDateTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HKGTOrderMedaDateTicket.m; sourceTree = "<group>"; };
 		7DA268FD241B5E4B00C1653C /* Example_InjectTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example_InjectTableView.m; sourceTree = "<group>"; };
 		7DA268FE241B5E4B00C1653C /* Example_InjectTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example_InjectTableView.h; sourceTree = "<group>"; };
+		7DA268FE242CB01B00495C45 /* testjson.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = testjson.geojson; sourceTree = "<group>"; };
 		7DA268FF241B5E4B00C1653C /* Example_InjectTableView.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Example_InjectTableView.geojson; sourceTree = "<group>"; };
 		7DA26906241B5F3400C1653C /* ExampleVC_EmptyDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleVC_EmptyDemo.h; sourceTree = "<group>"; };
 		7DA26907241B5F3400C1653C /* ExampleVC_EmptyDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleVC_EmptyDemo.m; sourceTree = "<group>"; };
@@ -1138,6 +1146,11 @@
 				7DA2688F241A4D4000C1653C /* Injection_ExampleVC.m */,
 				7D0AB4062429E79C006BA3A6 /* Person.h */,
 				7D0AB4072429E79C006BA3A6 /* Person.m */,
+				7DA268FE242CB01B00495C45 /* testjson.geojson */,
+				7DA268F8242CAF6500495C45 /* HKGTOrderModel.h */,
+				7DA268F9242CAF6500495C45 /* HKGTOrderModel.m */,
+				7DA268FB242CAF8300495C45 /* HKGTOrderMedaDateTicket.h */,
+				7DA268FC242CAF8300495C45 /* HKGTOrderMedaDateTicket.m */,
 				7D0AB4092429E986006BA3A6 /* Person.geojson */,
 			);
 			path = Injection_Example;
@@ -1459,6 +1472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA268FF242CB07200495C45 /* testjson.geojson in Resources */,
 				7D0AB40A2429E9AD006BA3A6 /* Person.geojson in Resources */,
 				7DA26904241B5E4C00C1653C /* Example_InjectTableView.geojson in Resources */,
 				7DA268A5241A511200C1653C /* ExampleListVC.geojson in Resources */,
@@ -1535,6 +1549,7 @@
 				7DA268312419D32500C1653C /* JCS_TableViewModel.m in Sources */,
 				7DA2681F2419D32500C1653C /* JCS_EventBus.m in Sources */,
 				7D636EBE2429D7DB0040CFE4 /* UIFont+JCS_Extension.m in Sources */,
+				7DA268FD242CAF8300495C45 /* HKGTOrderMedaDateTicket.m in Sources */,
 				7DA2689E241A4E1D00C1653C /* ExampleListItem.m in Sources */,
 				7DA2682D2419D32500C1653C /* UIButton+JCSCreate.m in Sources */,
 				7DA268BE241B383100C1653C /* ExampleTableSectionHeaderView.m in Sources */,
@@ -1562,6 +1577,7 @@
 				7DA26901241B5E4C00C1653C /* ExampleVC_InjectCollectionView.m in Sources */,
 				7DA268502419D32500C1653C /* UITextView+JCS_Create.m in Sources */,
 				7DA268242419D32500C1653C /* NSObject+JCS_Injection.m in Sources */,
+				7DA268FA242CAF6500495C45 /* HKGTOrderModel.m in Sources */,
 				7DA2687E241A4B2B00C1653C /* ExampleListVC.m in Sources */,
 				7DA268C8241B38F900C1653C /* ExampleService.m in Sources */,
 				7DA268202419D32500C1653C /* JCS_EventBusQueue.m in Sources */,
