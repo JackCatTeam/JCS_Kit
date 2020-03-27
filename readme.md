@@ -32,7 +32,7 @@
         * [跳转UIViewController](#跳转UIViewController)
         * [特殊路由](#特殊路由)
     * [JCS_EventBus](#JCS_EventBus)
-        * [示例](#示例)
+        * [示例](#示例-1)
         * [事件响应注册](#事件响应注册)
         * [事件触发](#事件触发)
         * [路由表](#路由表)
