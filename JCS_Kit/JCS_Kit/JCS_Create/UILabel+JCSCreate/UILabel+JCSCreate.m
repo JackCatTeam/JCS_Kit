@@ -41,27 +41,35 @@
 
 - (UILabel *(^)(UIColor *))jcs_textColor{
     return ^id(UIColor *value) {
-        self.textColor = value;
+        if(value) {
+            self.textColor = value;
+        }
         return self;
     };
 }
 - (UILabel *(^)(NSInteger hex))jcs_textColorHex{
     return ^id(NSInteger hex) {
-        self.textColor = JCS_COLOR_HEX(hex);;
+        if(hex > 0){
+            self.textColor = JCS_COLOR_HEX(hex);
+        }
         return self;
     };
 }
 
 - (UILabel *(^)(UIFont *))jcs_font{
     return ^id(UIFont *value) {
-        self.font = value;
+        if(value){
+            self.font = value;
+        }
         return self;
     };
 }
 
 - (UILabel *(^)(CGFloat))jcs_fontSize{
     return ^id(CGFloat value) {
-        self.font = [UIFont systemFontOfSize:value];
+        if(value > 0){
+            self.font = [UIFont systemFontOfSize:value];
+        }
         return self;
     };
 }

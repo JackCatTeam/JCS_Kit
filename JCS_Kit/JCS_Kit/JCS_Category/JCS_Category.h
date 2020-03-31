@@ -31,5 +31,8 @@
 #import "UICollectionViewCell+JCS_Swizzle.h"
 #import "UICollectionReusableView+JCS_Swizzle.h"
 
+#import "MASConstraintMaker+JCS_Extension.h"
+#import "MASConstraint+JCS_Extension.h"
+
 
 #endif /* JCS_Category_h */

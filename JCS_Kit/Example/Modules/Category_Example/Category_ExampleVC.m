@@ -18,17 +18,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = JCS_COLOR_HEX_String(@"FF0000");
+//    self.view.backgroundColor = JCS_COLOR_HEX_String(@"FF0000");
+    self.view.jcs_whiteBackgroundColor();
+    
+    [UIView jcs_createAndLayout:self constraintBlock:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+//        make.width.height.mas_equalTo(100);
+//        make.height.jcs_width_e(100);
+//        make.height.jcs_width_e(10);
+//        make.jcs_width_e(100);
+//        make.jcs_height_e(100);
+        make.width.jcs_height_e(200);
+//        make.left
+//        make.top
+//        make.right
+//        make.bottom
+//        make.center
+//        make.centerX
+//        make.centerY
+//        make.edges
+    }].jcs_backgroundColor(UIColor.redColor);
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
